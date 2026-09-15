@@ -12,10 +12,15 @@ function App() {
     age : 18 ,
   }
 
+  const some = {
+    Na : "heeee"
+  }
+
 
   return (
     <div>
       <h1>{Test.name}</h1>
+      <p>{some.Na}</p>
     </div>
   )
 }
