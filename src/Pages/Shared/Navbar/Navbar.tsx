@@ -85,7 +85,7 @@ const Navbar = () => {
                         </p>
                     </div>
                     {/* Mid Links  */}
-                    <div className="gap-6 midLinks hover:text-accent hidden md:flex">
+                    <div className="gap-7 midLinks hover:text-accent hidden md:flex">
                         {allLinks}
                     </div>
                     {/*Right Login and Accounts  */}
