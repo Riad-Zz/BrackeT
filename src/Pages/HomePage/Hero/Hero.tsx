@@ -75,8 +75,8 @@ const Hero = () => {
                         <HeroVideoDialog
                             className='border-none rounded-2xl w-full'
                             animationStyle='from-center'
-                            videoSrc='/public/BracKeT_Motion_Promo.mp4'
-                            thumbnailSrc='/public/HeroThumnailll.jpeg'
+                            videoSrc='/BracKeT_Motion_Promo.mp4'
+                            thumbnailSrc='/HeroThumnailll.jpeg'
                         />
                         {/* BorderBeam hugs the exact dimensions of this relative wrapper */}
                         <BorderBeam

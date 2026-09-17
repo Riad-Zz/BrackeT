@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -11,7 +11,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Avatar1 from "@/assets/defaultAvatar.jpeg"
-import Avatar2 from "@/assets/defaultAvatarCat.jpeg"
+// import Avatar2 from "@/assets/defaultAvatarCat.jpeg"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { PiUserCircleThin } from "react-icons/pi";
 import { CiSettings } from "react-icons/ci";
@@ -63,12 +63,19 @@ const Navbar = () => {
         "#ffffff",
     ];
 
-    const user = false ;
-    // const user = {
-    //     email : "kazuha3242@gmail.com" ,
-    //     photoUrl : {Avatar1} ,
-    //     Name : "KaZuha"
-    // } 
+    type User = {
+    email: string;
+    photoUrl: string;
+    Name: string;
+};
+
+// const user: User | null = {
+//     email: "kazuha3242@gmail.com",
+//     photoUrl: Avatar1,
+//     Name: "KaZuha"
+// };
+
+const user: User | null = null;
 
     return (
         <div>
