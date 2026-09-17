@@ -75,7 +75,8 @@ const Navbar = () => {
 //     Name: "KaZuha"
 // };
 
-const user: User | null = null;
+const getUser = (): User | null => null;
+const user = getUser();
 
     return (
         <div>
