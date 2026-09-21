@@ -21,7 +21,6 @@ const Footer = () => {
 
     return (
         <footer className="w-full py-12 bg-background relative">
-
             <div className="w-11/12 xl:max-w-7xl mx-auto flex flex-col gap-8  bg-primary/70 rounded-2xl p-8 lg:p-12  relative z-10">
 
                 {/* Top Section */}
