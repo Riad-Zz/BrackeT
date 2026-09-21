@@ -3,28 +3,30 @@ import WebsiteLogo from "@/assets/MainLogo.png";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { LiaCcVisa } from "react-icons/lia";
 import { FaCcAmex, FaFacebook, FaInstagramSquare, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { Particles } from "@/components/ui/particles";
 
 const Footer = () => {
     const auraColor = [
-        "#dffb15", 
-        "#dffb15", 
-        "#dffb15",   
+        "#dffb15",
+        "#dffb15",
+        "#dffb15",
         "#ffffff",
         "#ffffff",
-        "#dffb15", 
-        "#dffb15", 
+        "#dffb15",
+        "#dffb15",
     ];
 
     // CSS-like classes for the link hover state requested
     const linkHoverStyle = "inline-block border-b border-transparent hover:font-bold hover:border-accent hover:text-foreground transition-all duration-200 pb-0.5";
 
     return (
-        <footer className="w-full py-12 bg-background">
-            <div className="w-11/12 xl:max-w-7xl mx-auto flex flex-col gap-8  bg-primary/70 rounded-2xl p-8 lg:p-12">
-                
+        <footer className="w-full py-12 bg-background relative">
+
+            <div className="w-11/12 xl:max-w-7xl mx-auto flex flex-col gap-8  bg-primary/70 rounded-2xl p-8 lg:p-12  relative z-10">
+
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    
+
                     {/* Brand & Contact Column */}
                     <div className="flex flex-col space-y-5">
                         <div className="flex items-center justify-start gap-3">
@@ -35,7 +37,7 @@ const Footer = () => {
                                 </AuroraText>
                             </h2>
                         </div>
-                        
+
                         <div className="text-sm text-card-foreground/80 space-y-4 mt-2">
                             <p>support@bracket.io</p>
                             <p className="leading-relaxed">
@@ -73,9 +75,9 @@ const Footer = () => {
                         <div>
                             <h3 className="text-lg font-bold  mb-4">Social Media Link</h3>
                             <div className="flex items-center space-x-5">
-                                
+
                                 <Link to={"#"} aria-label="Facebook" className="hover:scale-110 transition-transform">
-                                    <FaFacebook size={30} className="" /> 
+                                    <FaFacebook size={30} className="" />
                                 </Link>
                                 <Link to={"#"} aria-label="Instagram" className="hover:scale-110 transition-transform">
                                     <FaInstagramSquare size={30} className="" />
@@ -95,7 +97,7 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 text-sm text-card-foreground/80">
-                    
+
                     {/* Payment Methods */}
                     <div className="flex flex-wrap items-center gap-4">
                         <span className="font-semibold text-card-foreground mr-2">Pay With</span>
@@ -105,7 +107,7 @@ const Footer = () => {
                             <FaCcAmex size={32} className="text-[#2671B9] bg-white rounded-sm px-0.5 hover:scale-105 transition-transform cursor-pointer" />
                         </div>
                     </div>
-                    
+
                     {/* Meta Information */}
                     <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-8 w-full lg:w-auto lg:justify-end">
                         <span>Trade License: 124154</span>
@@ -113,8 +115,15 @@ const Footer = () => {
                         <span>beta v0.0.1</span>
                     </div>
                 </div>
-                
+
             </div>
+            {/* Paticale Effect Section  */}
+            <Particles
+                className="absolute inset-0 z-0"
+                quantity={90}
+                ease={80}
+                refresh
+            />
         </footer>
     );
 };
