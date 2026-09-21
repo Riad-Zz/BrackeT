@@ -96,38 +96,43 @@ const HowItWork = () => {
 
             {/*--------------------- Workflow Describe Section Queue -> Code -> Climb (Concept 2) -------------------------- */}
          
-            <div className="flex mt-20 mb-10 flex-col md:flex-row justify-center items-start gap-10 md:gap-4 relative" ref={containerRef}>
+            <div className="flex mt-20 mb-10 flex-col md:flex-row justify-center items-start gap-12 md:gap-4 relative" ref={containerRef}>
                 
                 {/* Queue Step  */}
-                <div className="flex-1 flex flex-col items-center text-center z-10 px-4">
-                   
-                    <div ref={div1Ref} className="w-24 h-24 rounded-full bg-[#15191B] border border-gray-800 flex items-center justify-center z-10 mb-6 shadow-xl">
-                        <img src={queueIcon} alt="" className="w-12 h-12 bg-accent rounded-full" />
+                {/* Fix ->  Mobile: flex-row (icon left, text right). Desktop: flex-col (icon top, text bottom) */}
+                <div className="flex-1 flex flex-row md:flex-col items-center md:items-center text-left md:text-center z-10 px-2 md:px-4 w-full gap-6 md:gap-0">
+                    <div ref={div1Ref} className="shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#15191B] border border-gray-800 flex items-center justify-center z-10 mb-0 md:mb-6 shadow-xl">
+                        <img src={queueIcon} alt="" className="w-10 h-10 md:w-12 md:h-12 bg-accent rounded-full" />
                     </div>
-                    {/* Text content floats below unboxed */}
-                    <p className="text-2xl font-bold text-foreground mb-2">Queue Up</p>
-                    <p className="text-sm font-medium text-gray-300 mb-2">Find your next rival.</p>
-                    <p className="text-xs text-gray-500 max-w-62.5">Enter the queue and get matched with a coder ready to compete at your level.</p>
+                    <div className="flex flex-col items-start md:items-center">
+                        <p className="text-xl md:text-2xl font-bold text-foreground mb-1 md:mb-2">Queue Up</p>
+                        <p className="text-sm font-medium text-gray-300 mb-1 md:mb-2">Find your next rival.</p>
+                        <p className="text-xs text-gray-500 max-w-62.5">Enter the queue and get matched with a coder ready to compete at your level.</p>
+                    </div>
                 </div>
 
                 {/* Code Step  */}
-                <div className="flex-1 flex flex-col items-center text-center z-10 px-4">
-                    <div ref={div2Ref} className="w-24 h-24 rounded-full bg-[#15191B] border border-gray-800 flex items-center justify-center z-10 mb-6 shadow-xl">
-                        <img src={VersusIcon} alt="" className="w-12 h-12 bg-accent rounded-full" />
+                <div className="flex-1 flex flex-row md:flex-col items-center md:items-center text-left md:text-center z-10 px-2 md:px-4 w-full gap-6 md:gap-0">
+                    <div ref={div2Ref} className="shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#15191B] border border-gray-800 flex items-center justify-center z-10 mb-0 md:mb-6 shadow-xl">
+                        <img src={VersusIcon} alt="" className="w-10 h-10 md:w-12 md:h-12 bg-accent rounded-full" />
                     </div>
-                    <p className="text-2xl font-bold text-foreground mb-2">Enter the Arena</p>
-                    <p className="text-sm font-medium text-gray-300 mb-2">Same problem. Same clock. One winner.</p>
-                    <p className="text-xs text-gray-500 max-w-62.5">Solve the challenge before your opponent does. Speed, accuracy, and strategy all matter.</p>
+                    <div className="flex flex-col items-start md:items-center">
+                        <p className="text-xl md:text-2xl font-bold text-foreground mb-1 md:mb-2">Enter the Arena</p>
+                        <p className="text-sm font-medium text-gray-300 mb-1 md:mb-2">Same problem. Same clock. One winner.</p>
+                        <p className="text-xs text-gray-500 max-w-62.5">Solve the challenge before your opponent does. Speed, accuracy, and strategy all matter.</p>
+                    </div>
                 </div>
 
                 {/* Climb Step  */}
-                <div className="flex-1 flex flex-col items-center text-center z-10 px-4">
-                    <div ref={div3Ref} className="w-24 h-24 rounded-full bg-[#15191B] border border-gray-800 flex items-center justify-center z-10 mb-6 shadow-xl">
-                        <img src={WinnIcon} alt="" className="w-12 h-12 bg-accent rounded-full" />
+                <div className="flex-1 flex flex-row md:flex-col items-center md:items-center text-left md:text-center z-10 px-2 md:px-4 w-full gap-6 md:gap-0">
+                    <div ref={div3Ref} className="shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#15191B] border border-gray-800 flex items-center justify-center z-10 mb-0 md:mb-6 shadow-xl">
+                        <img src={WinnIcon} alt="" className="w-10 h-10 md:w-12 md:h-12 bg-accent rounded-full" />
                     </div>
-                    <p className="text-2xl font-bold text-foreground mb-2">Climb the Ranks</p>
-                    <p className="text-sm font-medium text-gray-300 mb-2">Win duels. Gain RR. Become harder to beat.</p>
-                    <p className="text-xs text-gray-500 max-w-62.5">Every victory pushes your rating higher and brings you closer to the next rank.</p>
+                    <div className="flex flex-col items-start md:items-center">
+                        <p className="text-xl md:text-2xl font-bold text-foreground mb-1 md:mb-2">Climb the Ranks</p>
+                        <p className="text-sm font-medium text-gray-300 mb-1 md:mb-2">Win duels. Gain RR. Become harder to beat.</p>
+                        <p className="text-xs text-gray-500 max-w-62.5">Every victory pushes your rating higher and brings you closer to the next rank.</p>
+                    </div>
                 </div>
 
                 {/* Animated Beams */}
