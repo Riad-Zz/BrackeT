@@ -37,7 +37,7 @@ const AuthLayout = () => {
                 <div className="bg-white rounded-xl flex flex-col md:flex-row justify-between items-stretch min-h-[800px] gap-5 p-2 shadow-2xl">
                 
                     {/* Left Side Login / Register Model */}
-                    <div className="relative rounded-xl flex flex-col gap-2 bg-black flex-1 w-full overflow-hidden justify-center items-center">
+                    <div className="relative rounded-xl flex flex-col gap-2 bg-black flex-1 w-full overflow-hidden justify-center items-center p-4">
                         
                         <div className="absolute inset-0 z-0 pointer-events-none">
                             <GlyphMatrix />
