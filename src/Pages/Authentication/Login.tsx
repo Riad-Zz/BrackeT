@@ -62,14 +62,14 @@ const Login = () => {
             <button 
                 onClick={paswordResetEmail} 
                 type="button" 
-                className="w-full bg-primary text-white font-bold py-3.5 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98]"
+                className="w-full bg-black text-white font-bold py-3.5 rounded-lg cursor-pointer hover:opacity-90 transition-opacity active:scale-[0.98]"
             >
                 Send Reset Link
             </button>
 
             <p className="text-gray-500 text-center text-sm mt-8">
                 Remember your password?{' '}
-                <span onClick={handleForgetPassword} className="font-bold text-primary/90 hover:underline cursor-pointer">
+                <span onClick={handleForgetPassword} className="font-bold text-black underline cursor-pointer">
                     Login
                 </span>
             </p>
@@ -141,13 +141,13 @@ const Login = () => {
                 <label className="flex items-center gap-2 cursor-pointer">
                     <input 
                         type="checkbox" 
-                        className="w-4 h-4 rounded border-gray-300 text-accent focus:ring-accent cursor-pointer" 
+                        className="w-4 h-4 rounded accent-black  cursor-pointer" 
                     />
                     <span className="text-sm font-medium text-gray-600 ">Remember me</span>
                 </label>
                 
                 {/*  onClick handler for Forget Password */}
-                <p onClick={handleForgetPassword} className="text-sm font-bold text-primary/90 hover:underline cursor-pointer">
+                <p onClick={handleForgetPassword} className="text-sm font-bold text-black underline hover:underline cursor-pointer">
                     Forgot Password?
                 </p>
             </div>
@@ -155,7 +155,7 @@ const Login = () => {
             {/* Login Button */}
             <button 
                 type="submit" 
-                className="w-full bg-primary text-white font-bold py-3.5 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98]"
+                className="w-full bg-black text-white font-bold py-3.5 cursor-pointer rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98]"
             >
                 Login
             </button>
@@ -170,7 +170,7 @@ const Login = () => {
             {/* Google Login */}
             <button 
                 type="button" 
-                className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 font-bold py-3.5 rounded-lg hover:bg-gray-50 transition-colors active:scale-[0.98]"
+                className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 font-bold py-3.5 cursor-pointer rounded-lg hover:bg-gray-50 transition-colors active:scale-[0.98]"
             >
                 <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path>
@@ -184,7 +184,7 @@ const Login = () => {
             {/* Register Link */}
             <p className="text-gray-500 text-center text-sm mt-8">
                 Don't have an account?{' '}
-                <Link to="/register" className="font-bold text-primary/90 hover:underline">
+                <Link to="/register" className="font-bold text-black underline">
                     Register
                 </Link>
             </p>

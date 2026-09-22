@@ -7,7 +7,7 @@ import imageUpload from '@/assets/defaultAvatar.jpeg';
 // -----------------Defined type to prevent TypeScript errors ------------------
 type RegisterData = {
     avatar: any;
-    name: string;
+    username: string;
     email: string;
     password: string;
 };
@@ -47,7 +47,7 @@ const Register = () => {
     const handleGoogleLogin = () => {
         console.log("Google Registration Clicked");
     };
-    
+
 
     return (
         <form onSubmit={handleSubmit(handleRegister)} className="w-full flex flex-col">
@@ -94,17 +94,17 @@ const Register = () => {
                 )}
             </div>
 
-            {/*------------------ Name Field ------------------------*/}
+            {/*------------------User Name Field ------------------------*/}
             <div className="mb-4">
-                <label className="block font-semibold text-gray-700 text-sm mb-2">Name</label>
+                <label className="block font-semibold text-gray-700 text-sm mb-2">Username</label>
                 <input
                     type="text"
                     className="w-full bg-transparent border border-gray-300 focus:border-black focus:ring-1 focus:ring-black transition-all py-3 px-4 rounded-lg outline-none text-gray-900"
-                    placeholder="Full Name"
-                    {...register('name', { required: "Name is required" })}
+                    placeholder="User Name"
+                    {...register('username', { required: "Name is required" })}
                 />
-                {errors.name && (
-                    <p className="text-red-500 text-xs mt-1 font-medium">{errors.name.message as string}</p>
+                {errors.username && (
+                    <p className="text-red-500 text-xs mt-1 font-medium">{errors.username.message as string}</p>
                 )}
             </div>
 
@@ -164,7 +164,7 @@ const Register = () => {
             {/*----------------------- Register Button ------------------------*/}
             <button 
                 type="submit" 
-                className="w-full bg-primary text-white font-bold py-3.5 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98]"
+                className="w-full bg-black text-white font-bold py-3.5 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98] cursor-pointer"
             >
                 Register
             </button>
@@ -180,7 +180,7 @@ const Register = () => {
             <button 
                 onClick={handleGoogleLogin} 
                 type="button" 
-                className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 font-bold py-3.5 rounded-lg hover:bg-gray-50 transition-colors active:scale-[0.98]"
+                className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 font-bold py-3.5 cursor-pointer rounded-lg hover:bg-gray-50 transition-colors active:scale-[0.98]"
             >
                 <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path>
@@ -194,7 +194,7 @@ const Register = () => {
             {/* Login Link */}
             <p className="text-gray-500 text-center text-sm mt-8">
                 Already have an account?{' '}
-                <Link to="/login" className="font-bold text-primary hover:underline">
+                <Link to="/login" className="font-bold text-black underline">
                     Login
                 </Link>
             </p>
