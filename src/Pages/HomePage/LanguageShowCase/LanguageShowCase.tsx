@@ -76,9 +76,9 @@ const LanguageShowCase = () => {
 
                 {/* Right div for text Content */}
                 <motion.div
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1.1, ease : "easeIn" }}
+                    transition={{ duration: 0.8, ease : "easeIn" }}
                     viewport={{ once: false }}
                     className="flex flex-col justify-center max-w-xl mt-8 md:mt-0"
                 >

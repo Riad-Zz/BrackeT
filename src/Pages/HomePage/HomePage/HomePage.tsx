@@ -1,4 +1,5 @@
 
+import { BentoSection } from '../BentoSection/BentoSection';
 import Hero from '../Hero/Hero';
 import HowItWork from '../HowItWork/HowItWork';
 import LanguageShowCase from '../LanguageShowCase/LanguageShowCase';
@@ -12,6 +13,7 @@ const HomePage = () => {
             <HowItWork></HowItWork>
             <RankSystem></RankSystem>
             <LanguageShowCase></LanguageShowCase>
+            <BentoSection></BentoSection>
         </div>
     );
 };
