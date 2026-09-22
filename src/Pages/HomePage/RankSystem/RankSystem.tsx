@@ -26,15 +26,12 @@ const RankSystem = () => {
 
                 {/* Left Side Div */}
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
+                    transition={{ duration: 1.1, ease : "easeIn" }}
+                    viewport={{ once: false }}
                     className="flex flex-col justify-center max-w-xl"
                 >
-
-                    
-
 
                     {/* title */}
                     <h2 className="text-4xl md:text-5xl  my-2 font-bold tracking-tight text-[var(--foreground)]">
