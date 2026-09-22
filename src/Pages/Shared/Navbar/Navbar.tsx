@@ -4,7 +4,7 @@ import {
     NavigationMenuItem,
     NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import MainLogo from "@/assets/MainLogo.png";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
@@ -42,12 +42,12 @@ const Navbar = () => {
     const allDropdown = (
         <>
             <DropdownMenuGroup>
-            <DropdownMenuItem className={`cursor-pointer`}><PiUserCircleThin/><NavLink to={'/profile'}>Profile</NavLink></DropdownMenuItem>
-            <DropdownMenuItem className={`cursor-pointer`}> <CiSettings/><NavLink to={'/setting'}>Setting</NavLink> </DropdownMenuItem>
+                <DropdownMenuItem className={`cursor-pointer`}><PiUserCircleThin /><NavLink to={'/profile'}>Profile</NavLink></DropdownMenuItem>
+                <DropdownMenuItem className={`cursor-pointer`}> <CiSettings /><NavLink to={'/setting'}>Setting</NavLink> </DropdownMenuItem>
             </DropdownMenuGroup>
-            <DropdownMenuSeparator/>
+            <DropdownMenuSeparator />
             <DropdownMenuGroup>
-            <DropdownMenuItem className={`text-red-500 cursor-pointer`}><CiLogout/><NavLink to={'/logout'}>Logout</NavLink></DropdownMenuItem>
+                <DropdownMenuItem className={`text-red-500 cursor-pointer`}><CiLogout /><NavLink to={'/logout'}>Logout</NavLink></DropdownMenuItem>
             </DropdownMenuGroup>
         </>
     )
@@ -64,19 +64,19 @@ const Navbar = () => {
     ];
 
     type User = {
-    email: string;
-    photoUrl: string;
-    Name: string;
-};
+        email: string;
+        photoUrl: string;
+        Name: string;
+    };
 
-// const user: User | null = {
-//     email: "kazuha3242@gmail.com",
-//     photoUrl: Avatar1,
-//     Name: "KaZuha"
-// };
+    // const user: User | null = {
+    //     email: "kazuha3242@gmail.com",
+    //     photoUrl: Avatar1,
+    //     Name: "KaZuha"
+    // };
 
-const getUser = (): User | null => null;
-const user = getUser();
+    const getUser = (): User | null => null;
+    const user = getUser();
 
     return (
         <div>
@@ -100,20 +100,23 @@ const user = getUser();
                     <div className="flex gap-1">
                         {/*Login and Accounts Icon for Md and larger screen*/}
                         {
-                            user ? 
-                            <NavigationMenuItem className={`list-none hidden md:block`}>
-                                <div className="flex gap-2 items-center">
-                                    <DropdownMenu>
-                                        <DropdownMenuTrigger> <img src={Avatar1} alt="" className="h-10 w-10 rounded-full hidden md:block"/>
-                                        </DropdownMenuTrigger>
+                            user ?
+                                <NavigationMenuItem className={`list-none hidden md:block`}>
+                                    <div className="flex gap-2 items-center">
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger> <img src={Avatar1} alt="" className="h-10 w-10 rounded-full hidden md:block" />
+                                            </DropdownMenuTrigger>
                                             <DropdownMenuContent align="start" className={`bg-background mt-2 `}>
                                                 {allDropdown}
                                             </DropdownMenuContent>
-                                    </DropdownMenu>
-                                    
-                                </div>
-                            </NavigationMenuItem> 
-                            :<InteractiveHoverButton className={"bg-accent text-background text-[16px] rounded-sm cursor-pointer font-bold hidden md:block"} > Login </InteractiveHoverButton>
+                                        </DropdownMenu>
+
+                                    </div>
+                                </NavigationMenuItem>
+                                :
+                                <Link to={'/login'}>
+                                    <InteractiveHoverButton className={"bg-accent text-background text-[16px] rounded-sm cursor-pointer font-bold hidden md:block"} > Login </InteractiveHoverButton>
+                                </Link>
                         }
                         {/*Right Side Hamburger */}
                         <Sheet key={"right"}>
@@ -133,23 +136,29 @@ const user = getUser();
                                 {/* Hamburger login and profile Icons for Mobile Screen*/}
                                 <SheetFooter>
                                     {
-                                        user ?<NavigationMenuItem className={`list-none`}>
+                                        user ? <NavigationMenuItem className={`list-none`}>
                                             <div className="flex gap-2 items-center">
-                                            <DropdownMenu>
-                                                <DropdownMenuTrigger> 
-                                                    <img src={Avatar1} alt="" className="h-10 w-10 rounded-full md:hidden"/>
-                                                </DropdownMenuTrigger>
-                                                <DropdownMenuContent align="start" className={`bg-background mb-2 md:mb-0`}>
-                                                    {allDropdown}
-                                                </DropdownMenuContent>
-                                            </DropdownMenu>
-                                            <div>
-                                            <p>{user.Name}</p>
-                                            <p>{user.email}</p>
+                                                <DropdownMenu>
+                                                    <DropdownMenuTrigger>
+                                                        <img src={Avatar1} alt="" className="h-10 w-10 rounded-full md:hidden" />
+                                                    </DropdownMenuTrigger>
+                                                    <DropdownMenuContent align="start" className={`bg-background mb-2 md:mb-0`}>
+                                                        {allDropdown}
+                                                    </DropdownMenuContent>
+                                                </DropdownMenu>
+                                                <div>
+                                                    <p>{user.Name}</p>
+                                                    <p>{user.email}</p>
+                                                </div>
                                             </div>
-                                            </div>
-                                            </NavigationMenuItem> : 
-                                            <InteractiveHoverButton className={"bg-accent text-background text-[16px] rounded-sm cursor-pointer font-bold md:hidden"}> Login </InteractiveHoverButton> 
+                                        </NavigationMenuItem>
+                                            :
+                                            <Link
+                                                to="/login"
+                                                className="rounded-sm bg-accent px-4 py-2 text-center text-[16px] font-bold text-background"
+                                            >
+                                                Login
+                                            </Link>
                                     }
                                 </SheetFooter>
                             </SheetContent>
