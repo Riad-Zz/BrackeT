@@ -1,5 +1,6 @@
 
 import { BentoSection } from '../BentoSection/BentoSection';
+import { FAQSection } from '../FAQSection/FAQSection';
 import Hero from '../Hero/Hero';
 import HowItWork from '../HowItWork/HowItWork';
 import LanguageShowCase from '../LanguageShowCase/LanguageShowCase';
@@ -14,6 +15,7 @@ const HomePage = () => {
             <RankSystem></RankSystem>
             <LanguageShowCase></LanguageShowCase>
             <BentoSection></BentoSection>
+            <FAQSection></FAQSection>
         </div>
     );
 };

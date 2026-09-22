@@ -79,7 +79,7 @@ const LanguageShowCase = () => {
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease : "easeIn" }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className="flex flex-col justify-center max-w-xl mt-8 md:mt-0"
                 >
 
