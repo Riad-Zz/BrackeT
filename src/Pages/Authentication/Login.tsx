@@ -3,7 +3,7 @@ import { AuthContext } from '@/Provider/Authentication/AuthProvider';
 import React, { use, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import {  Link, useLocation, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 
 // Moved type definition outside the component to prevent re-creation on every render
@@ -20,7 +20,7 @@ const Login = () => {
     const [resetEmail, setResetEmail] = useState('');
     const { register, handleSubmit, formState: { errors } } = useForm<LoginData>();
     const [loadingAction, setLoadingAction] = useState(false); // Global Loading State
-    const {setUser, googleLogin } = use(AuthContext)! ;
+    const { setUser, googleLogin, emailLogin } = use(AuthContext)!;
 
     // ---------------- Password toggler eye function -------------------
     const handleEyeClick = (e: React.MouseEvent) => {
@@ -39,36 +39,58 @@ const Login = () => {
     };
 
     //------------------- Handle Email Login function -------------------
-    const handleEmailLogin = (data: LoginData) => {
-        console.log(data);
+    const handleEmailLogin = async (data: LoginData) => {
+        setLoadingAction(true);
+
+        try {
+            const result = await emailLogin(data.email, data.password);
+            const currentUser = result.user;
+            setUser(currentUser);
+
+            await new Promise((resolve) => setTimeout(resolve, 1500));
+            toast.success(`Welcome back, ${currentUser.displayName || "User"}!`);
+            navigate(location.state || "/");
+
+        } catch (error: any) {
+            const message = error.message
+                ? error.message.replace("Firebase:", "").trim()
+                : "Login failed. Please try again.";
+
+            toast.error(message);
+            setLoadingAction(false);
+        }
     };
 
     //----------------Handle Login with google --------------------------
     const handlegoogleLogin = async () => {
-    setLoadingAction(true);
-    try {
-        const result = await googleLogin();
-        const currentUser = result.user;
-        setUser(currentUser);
-        // console.log(currentUser);
-        // ---------- Template of the user so that when backend is conncted we can save user info via api 
-                // const newUser = {
-                //     displayName: currentUser.displayName,
-                //     email: currentUser.email,
-                //     photoURL: currentUser.photoURL,
-                //     role: "user" 
-                // }
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        navigate(location.state || "/");
-    } catch (error: any) {
-        toast.error(error.message.replace("Firebase:", "").trim());
-        setLoadingAction(false);
-    }
-};
+        setLoadingAction(true);
+        try {
+            const result = await googleLogin();
+            const currentUser = result.user;
+            setUser(currentUser);
+            // console.log(currentUser);
+            // ---------- Template of the user so that when backend is conncted we can save user info via api 
+            // const newUser = {
+            //     displayName: currentUser.displayName,
+            //     email: currentUser.email,
+            //     photoURL: currentUser.photoURL,
+            //     role: "user" 
+            // }
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            navigate(location.state || "/");
+        } catch (error: any) {
+            const message = error.message
+                ? error.message.replace("Firebase:", "").trim()
+                : "Login failed. Please try again.";
+
+            toast.error(message);
+            setLoadingAction(false);
+        }
+    };
 
     return (
         <>
-            {/* A full screen loading overaly while logging in */}
+            {/* ------------------ A full screen loading overaly while logging in ------------------------------*/}
             {loadingAction && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-sm bg-background/60">
                     <Loader></Loader>

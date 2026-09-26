@@ -32,7 +32,7 @@ const Register = () => {
     const [eye, setEye] = useState(false);
     const [preview, setPreview] = useState<string>(imageUpload);
     const imageInputRef = useRef<HTMLInputElement>(null);
-    const [loadingAction, setLoadingAction] = useState(false); 
+    const [loadingAction, setLoadingAction] = useState(false);
     const { setUser, googleLogin, emailRegistration, updateUserProfile } = use(AuthContext)!;
 
     // ---------------- UI Handlers -------------------
@@ -71,7 +71,7 @@ const Register = () => {
             const result = await emailRegistration(data.email, data.password);
             const currentUser = result.user;
             await updateUserProfile({ displayName: data.username, photoURL: finalImageLink });
-            setUser({...currentUser , displayName: data.username, photoURL: finalImageLink})
+            setUser({ ...currentUser, displayName: data.username, photoURL: finalImageLink })
 
             // ---------- Template of the user so that when backend is conncted we can save user info via api 
             // const newUser = {
@@ -82,12 +82,16 @@ const Register = () => {
             // };
             // console.log("new USer : " , newUser) ;
 
-            setPreview(imageUpload) ;
+            setPreview(imageUpload);
             await new Promise((resolve) => setTimeout(resolve, 1500));
-            toast.success("Account created successfully!") 
-            navigate(location.state || "/") ;
+            toast.success("Account created successfully!")
+            navigate(location.state || "/");
         } catch (error: any) {
-            toast.error(error.message.replace("Firebase:", "").trim());
+            const message = error.message
+                ? error.message.replace("Firebase:", "").trim()
+                : "Registration failed. Please try again.";
+
+            toast.error(message);
             setLoadingAction(false);
         }
     };
@@ -110,7 +114,11 @@ const Register = () => {
             await new Promise((resolve) => setTimeout(resolve, 1000));
             navigate(location.state || "/");
         } catch (error: any) {
-            toast.error(error.message.replace("Firebase:", "").trim());
+            const message = error.message
+                ? error.message.replace("Firebase:", "").trim()
+                : "Login failed. Please try again.";
+
+            toast.error(message);
             setLoadingAction(false);
         }
     };
@@ -122,7 +130,7 @@ const Register = () => {
             {loadingAction && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center flex-col  backdrop-blur-sm bg-background/60">
                     <Loader></Loader>
-                    <TypingAnimation words={registerLoadingMessages}  loop typeSpeed={40} className="mt-4 font-bold text-foreground"></TypingAnimation>
+                    <TypingAnimation words={registerLoadingMessages} loop typeSpeed={40} className="mt-4 font-bold text-foreground"></TypingAnimation>
                 </div>
             )}
 
