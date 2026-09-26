@@ -63,11 +63,11 @@ const Register = () => {
                 <img 
                     src={preview} 
                     alt="Avatar Preview"
-                    className="cursor-pointer h-20 w-20 rounded-full object-cover border-2 border-gray-200 hover:border-[var(--primary)] transition-colors shadow-sm"
+                    className="cursor-pointer h-20 w-20 rounded-full object-cover border-2 border-gray-200 hover:border-primary transition-colors shadow-sm"
                     onClick={handleUploadAvatar}
                 />
                 <p 
-                    className="text-gray-600 font-bold text-sm cursor-pointer hover:text-[var(--primary)] transition-colors" 
+                    className="text-gray-600 font-bold text-sm cursor-pointer hover:text-primary transition-colors" 
                     onClick={handleUploadAvatar}
                 >
                     Upload Your Avatar
