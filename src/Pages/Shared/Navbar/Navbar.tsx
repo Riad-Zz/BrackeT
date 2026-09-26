@@ -30,10 +30,11 @@ const Navbar = () => {
             // logging out 
             console.log("Logging Outtt") ;
         }).catch((error) => {
-            // An error happened.
+            console.log(error) ;
         });
     }
 
+    
      const allLinks = (
         <>
             <NavigationMenuItem className={"font-medium text-[16px] mb-1 text-[#e2e2e2cc]"}>
