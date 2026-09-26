@@ -44,28 +44,27 @@ const Login = () => {
     };
 
     //----------------Handle Login with google --------------------------
-    const handlegoogleLogin = () => {
-        googleLogin()
-            .then(async (result: any) => {
-                const currentUser = result.user;
-                setUser(currentUser);
-                console.log(currentUser) ;
-                // ---------- Template of the user so that when backend is conncted we can save user info via api 
+    const handlegoogleLogin = async () => {
+    setLoadingAction(true);
+    try {
+        const result = await googleLogin();
+        const currentUser = result.user;
+        setUser(currentUser);
+        console.log(currentUser);
+        // ---------- Template of the user so that when backend is conncted we can save user info via api 
                 // const newUser = {
                 //     displayName: currentUser.displayName,
                 //     email: currentUser.email,
                 //     photoURL: currentUser.photoURL,
                 //     role: "user" 
                 // }
-                 navigate(location.state || '/');
-            })
-            .catch((error : any) => {
-                toast.error(error.message.replace("Firebase:", "").trim());
-            })
-            .finally(() => {
-                setLoadingAction(false);
-            });
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        navigate(location.state || "/");
+    } catch (error: any) {
+        toast.error(error.message.replace("Firebase:", "").trim());
+        setLoadingAction(false);
     }
+};
 
     return (
         <>

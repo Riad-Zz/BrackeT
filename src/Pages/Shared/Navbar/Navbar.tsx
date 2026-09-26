@@ -10,7 +10,8 @@ import { AuroraText } from "@/components/ui/aurora-text";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Avatar1 from "@/assets/defaultAvatar.jpeg"
+// import Avatar1 from "@/assets/defaultAvatar.jpeg"
+import Avatar1 from "@/assets/TempProfile.jpeg"
 // import Avatar2 from "@/assets/defaultAvatarCat.jpeg"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { PiUserCircleThin } from "react-icons/pi";
@@ -21,9 +22,19 @@ import { AuthContext } from "@/Provider/Authentication/AuthProvider";
 
 
 const Navbar = () => {
-    const {user} = use(AuthContext)!
+    const {user , logOut} = use(AuthContext)!
 
-    const allLinks = (
+    //----------------- *** Handle Logout functionality *** -------------------------
+    const handleLogOut = () => {
+        logOut().then(() => {
+            // logging out 
+            console.log("Logging Outtt") ;
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+
+     const allLinks = (
         <>
             <NavigationMenuItem className={"font-medium text-[16px] mb-1 text-[#e2e2e2cc]"}>
                 <NavLink to={"/"}>Home</NavLink>{" "}
@@ -51,21 +62,12 @@ const Navbar = () => {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-                <DropdownMenuItem className={`text-red-500 cursor-pointer`}><CiLogout /><NavLink to={'/logout'}>Logout</NavLink></DropdownMenuItem>
+                <DropdownMenuItem onClick={handleLogOut} className={`text-red-500 cursor-pointer`}><CiLogout />Logout</DropdownMenuItem>
             </DropdownMenuGroup>
         </>
     )
 
-    const auraColor = [
-        "#ffffff",
-        "#eefed1",
-        "#dffb15",
-        "#4bc69d",
-        "#38bdf8",
-        "#0052d8",
-        "#d8ecff",
-        "#ffffff",
-    ];
+    const auraColor = [ "#ffffff", "#eefed1", "#dffb15", "#4bc69d", "#38bdf8", "#0052d8", "#d8ecff", "#ffffff", ];
 
     // type User = {
     //     email: string;
@@ -81,7 +83,6 @@ const Navbar = () => {
 
     // const getUser = (): User | null => null;
     // const user = getUser();
-
     return (
         <div>
             <NavigationMenu className={`max-w-11/12 xl:max-w-7xl m-auto my-1 `}>

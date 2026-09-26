@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, type User, type UserCredential } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, type User, type UserCredential } from "firebase/auth";
 import app from "@/Firebase/Firebase.config";
 
 
@@ -10,6 +10,7 @@ type AuthContextType = {
     loading: boolean;
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
     googleLogin: () => Promise<UserCredential>;
+    logOut : () => Promise<void>
 };
 
 
@@ -26,6 +27,11 @@ const AuthProvider = ({children} : {children: React.ReactNode}) =>{
     // ======================*** Register or Login with google Account ***=======================
     const googleLogin = () =>{
         return signInWithPopup(auth,googleProvider) ;
+    }
+
+    //----------------------------*** LogOut Functionality  ***------------------------------
+    const logOut = () => {
+        return signOut(auth);
     }
 
 
@@ -48,6 +54,7 @@ const AuthProvider = ({children} : {children: React.ReactNode}) =>{
         loading,
         setLoading ,
         googleLogin ,
+        logOut,
     }
 
     return (
