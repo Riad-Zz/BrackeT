@@ -22,20 +22,20 @@ import { AuthContext } from "@/Provider/Authentication/AuthProvider";
 
 
 const Navbar = () => {
-    const {user , logOut} = use(AuthContext)!
+    const { user, logOut } = use(AuthContext)!
 
     //----------------- *** Handle Logout functionality *** -------------------------
     const handleLogOut = () => {
         logOut().then(() => {
             // logging out 
-            console.log("Logging Outtt") ;
+            console.log("Logging Outtt");
         }).catch((error) => {
-            console.log(error) ;
+            console.log(error);
         });
     }
 
-    
-     const allLinks = (
+
+    const allLinks = (
         <>
             <NavigationMenuItem className={"font-medium text-[16px] mb-1 text-[#e2e2e2cc]"}>
                 <NavLink to={"/"}>Home</NavLink>{" "}
@@ -68,7 +68,8 @@ const Navbar = () => {
         </>
     )
 
-    const auraColor = [ "#ffffff", "#eefed1", "#dffb15", "#4bc69d", "#38bdf8", "#0052d8", "#d8ecff", "#ffffff", ];
+    const auraColor = ["#ffffff", "#eefed1", "#dffb15", "#4bc69d", "#38bdf8", "#0052d8", "#d8ecff", "#ffffff",];
+    // console.log(user?.photoURL) ;
 
     // type User = {
     //     email: string;
@@ -110,7 +111,14 @@ const Navbar = () => {
                                 <NavigationMenuItem className={`list-none hidden md:block`}>
                                     <div className="flex gap-2 items-center">
                                         <DropdownMenu>
-                                            <DropdownMenuTrigger> <img src={Avatar1} alt="" className="h-10 w-10 rounded-full hidden md:block" />
+                                            <DropdownMenuTrigger>
+                                                {/* <img src={Avatar1} alt="" className="h-10 w-10 rounded-full hidden md:block" /> */}
+                                                {
+                                                    user.photoURL ?
+                                                        <img src={user.photoURL} alt="" className="h-10 w-10 rounded-full hidden md:block" />
+                                                        :
+                                                        <img src={Avatar1} alt="" className="h-10 w-10 rounded-full hidden md:block" />
+                                                }
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="start" className={`bg-background mt-2 `}>
                                                 {allDropdown}
@@ -146,7 +154,13 @@ const Navbar = () => {
                                             <div className="flex gap-2 items-center">
                                                 <DropdownMenu>
                                                     <DropdownMenuTrigger>
-                                                        <img src={Avatar1} alt="" className="h-10 w-10 rounded-full md:hidden" />
+                                                        {
+                                                            user.photoURL ?
+                                                                <img src={user.photoURL} alt="" className="h-10 w-10 rounded-full md:hidden" />
+                                                                :
+                                                                <img src={Avatar1} alt="" className="h-10 w-10 rounded-full md:hidden" />
+                                                        }
+
                                                     </DropdownMenuTrigger>
                                                     <DropdownMenuContent align="start" className={`bg-background mb-2 md:mb-0`}>
                                                         {allDropdown}

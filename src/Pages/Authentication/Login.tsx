@@ -70,7 +70,7 @@ const Login = () => {
         <>
             {/* A full screen loading overaly while logging in */}
             {loadingAction && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-sm bg-background/40">
+                <div className="fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-sm bg-background/60">
                     <Loader></Loader>
                 </div>
             )}

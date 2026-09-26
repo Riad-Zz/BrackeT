@@ -6,6 +6,8 @@ import imageUpload from '@/assets/defaultAvatar.jpeg';
 import { AuthContext } from '@/Provider/Authentication/AuthProvider';
 import { toast } from 'react-toastify';
 import { Loader } from '@/components/ui/Loader';
+import axios from 'axios';
+import { TypingAnimation } from '@/components/ui/typing-animation';
 
 // -----------------Defined type to prevent TypeScript errors ------------------
 type RegisterData = {
@@ -15,6 +17,14 @@ type RegisterData = {
     password: string;
 };
 
+const registerLoadingMessages = [
+    "Creating your BracKeT account...",
+    "Setting up your profile...",
+    "Uploading your avatar...",
+    "Saving your profile...",
+    "Getting your arena ready...",
+];
+
 const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,7 +33,7 @@ const Register = () => {
     const [preview, setPreview] = useState<string>(imageUpload);
     const imageInputRef = useRef<HTMLInputElement>(null);
     const [loadingAction, setLoadingAction] = useState(false); // Global Loading State
-    const { setUser, googleLogin } = use(AuthContext)!;
+    const { setUser, googleLogin, emailRegistration, updateUserProfile } = use(AuthContext)!;
 
     // ---------------- UI Handlers -------------------
     const handleUploadAvatar = () => {
@@ -42,12 +52,44 @@ const Register = () => {
         setEye(!eye);
     };
 
-    // ---------------- Submit Handlers (Mock) -------------------
+    // ---------------- Submit Handlers -------------------
 
-    // ----------------- Email Register Handle ------------------------
-    const handleRegister = (data: RegisterData) => {
-        console.log("Registration Data:", data);
-        // Add your Firebase/ImageBB logic back here later
+    // ----------------- *** Email Register Handle ***------------------------
+    const handleRegister = async (data: RegisterData) => {
+        // console.log("Registration Data:", data);
+        setLoadingAction(true);
+        try {
+            // ************** Uploading the image to imagebb.com *******************
+            const profileImage = data.avatar[0];
+            const profileImageData = new FormData();
+            profileImageData.append('image', profileImage);
+            const profileImageApiUrl = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_UPLOAD_KEY}`;
+            const res = await axios.post(profileImageApiUrl, profileImageData);
+            const finalImageLink = res.data.data.url;
+
+            // ********************* Email Registration Using Firebase **********************
+            const result = await emailRegistration(data.email, data.password);
+            const currentUser = result.user;
+            await updateUserProfile({ displayName: data.username, photoURL: finalImageLink });
+            setUser({...currentUser , displayName: data.username, photoURL: finalImageLink})
+
+            // ---------- Template of the user so that when backend is conncted we can save user info via api 
+            // const newUser = {
+            //     displayName: data.username,
+            //     email: data.email,
+            //     photoURL: finalImageLink,
+            //     role: "user"
+            // };
+            // console.log("new USer : " , newUser) ;
+
+            setPreview(imageUpload) ;
+            await new Promise((resolve) => setTimeout(resolve, 1500));
+            toast.success("Account created successfully!") 
+            navigate(location.state || "/") ;
+        } catch (error: any) {
+            toast.error(error.message.replace("Firebase:", "").trim());
+            setLoadingAction(false);
+        }
     };
 
     //----------------Handle Login with google --------------------------
@@ -78,8 +120,9 @@ const Register = () => {
         <>
             {/* A full screen loading overaly while logging in */}
             {loadingAction && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-sm bg-background/40">
+                <div className="fixed inset-0 z-50 flex items-center justify-center flex-col  backdrop-blur-sm bg-background/60">
                     <Loader></Loader>
+                    <TypingAnimation words={registerLoadingMessages}  loop typeSpeed={40} className="mt-4 font-bold text-foreground"></TypingAnimation>
                 </div>
             )}
 
