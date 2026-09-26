@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import logo from "@/assets/MainLogo.png"
 
-export const Component = () => {
+export const Loader = () => {
   return (
     <div className={cn("flex flex-col items-center gap-4 p-4 rounded-lg")}>
       <div className="relative flex justify-center items-center">

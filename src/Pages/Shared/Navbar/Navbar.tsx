@@ -16,9 +16,13 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem,
 import { PiUserCircleThin } from "react-icons/pi";
 import { CiSettings } from "react-icons/ci";
 import { CiLogout } from "react-icons/ci";
+import { use } from "react";
+import { AuthContext } from "@/Provider/Authentication/AuthProvider";
 
 
 const Navbar = () => {
+    const {user} = use(AuthContext)!
+
     const allLinks = (
         <>
             <NavigationMenuItem className={"font-medium text-[16px] mb-1 text-[#e2e2e2cc]"}>
@@ -42,8 +46,8 @@ const Navbar = () => {
     const allDropdown = (
         <>
             <DropdownMenuGroup>
-                <DropdownMenuItem className={`cursor-pointer`}><PiUserCircleThin /><NavLink to={'/profile'}>Profile</NavLink></DropdownMenuItem>
-                <DropdownMenuItem className={`cursor-pointer`}> <CiSettings /><NavLink to={'/setting'}>Setting</NavLink> </DropdownMenuItem>
+                <NavLink to={'/profile'}><DropdownMenuItem className={`cursor-pointer`}><PiUserCircleThin />Profile</DropdownMenuItem></NavLink>
+                <NavLink to={'/setting'}><DropdownMenuItem className={`cursor-pointer`}> <CiSettings />Setting</DropdownMenuItem></NavLink>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
@@ -63,20 +67,20 @@ const Navbar = () => {
         "#ffffff",
     ];
 
-    type User = {
-        email: string;
-        photoUrl: string;
-        Name: string;
-    };
-
-    // const user: User | null = {
-    //     email: "kazuha3242@gmail.com",
-    //     photoUrl: Avatar1,
-    //     Name: "KaZuha"
+    // type User = {
+    //     email: string;
+    //     photoUrl: string;
+    //     Name: string;
     // };
 
-    const getUser = (): User | null => null;
-    const user = getUser();
+    // // const user: User | null = {
+    // //     email: "kazuha3242@gmail.com",
+    // //     photoUrl: Avatar1,
+    // //     Name: "KaZuha"
+    // // };
+
+    // const getUser = (): User | null => null;
+    // const user = getUser();
 
     return (
         <div>
@@ -147,7 +151,7 @@ const Navbar = () => {
                                                     </DropdownMenuContent>
                                                 </DropdownMenu>
                                                 <div>
-                                                    <p>{user.Name}</p>
+                                                    <p>{user.displayName}</p>
                                                     <p>{user.email}</p>
                                                 </div>
                                             </div>
