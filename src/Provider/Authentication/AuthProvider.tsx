@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged,  signInWithPopup, signOut, updateProfile, type User, type UserCredential } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged,  signInWithEmailAndPassword,  signInWithPopup, signOut, updateProfile, type User, type UserCredential } from "firebase/auth";
 import app from "@/Firebase/Firebase.config";
 
 
@@ -18,6 +18,7 @@ type AuthContextType = {
     logOut : () => Promise<void> ;
     emailRegistration : (email : string , password : string) => Promise<UserCredential> ;
     updateUserProfile: (updatedInformation: UpdateUserProfileData) => Promise<void>;
+    emailLogin : (email : string , password : string) => Promise<UserCredential> ;
 };
 
 
@@ -51,6 +52,11 @@ const AuthProvider = ({children} : {children: React.ReactNode}) =>{
         return updateProfile(auth.currentUser! , UpdatedInformation) 
     }
 
+    // ============================= *** Login With Email and Password ***=====================
+    const emailLogin = (email : string , password : string)=>{
+        return signInWithEmailAndPassword(auth,email ,password) ;
+    }
+
     // =======================*** Observer to keep logged in a user ***========================
     useEffect(()=>{
         const tracking = onAuthStateChanged(auth,(currentUser)=>{
@@ -72,7 +78,8 @@ const AuthProvider = ({children} : {children: React.ReactNode}) =>{
         googleLogin ,
         logOut,
         emailRegistration ,
-        updateUserProfile
+        updateUserProfile ,
+        emailLogin
     }
 
     return (
