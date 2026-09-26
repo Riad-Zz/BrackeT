@@ -5,11 +5,13 @@ import ErrorPage from "@/Pages/Shared/ErrorPage/ErrorPage"
 import AuthLayout from "@/Layouts/AuthLayout/AuthLayout"
 import Login from "@/Pages/Authentication/Login"
 import Register from "@/Pages/Authentication/Register"
+import { Loader } from "@/components/ui/Loader"
 // import About from "@/Pages/HomePage/About/About"
 export const router = createBrowserRouter([
     {
         path : '/' ,
         Component : Root ,
+        HydrateFallback : Loader ,
         errorElement : <ErrorPage></ErrorPage>,
         children : [
             {index : true , Component : HomePage} ,
@@ -18,6 +20,7 @@ export const router = createBrowserRouter([
     {
         path : '/' ,
         Component : AuthLayout ,
+        HydrateFallback : Loader,
         errorElement : <ErrorPage></ErrorPage> ,
         children : [
             {path : 'login' , Component : Login},

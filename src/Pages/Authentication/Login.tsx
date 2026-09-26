@@ -48,7 +48,7 @@ const Login = () => {
             setUser(currentUser);
 
             await new Promise((resolve) => setTimeout(resolve, 1500));
-            toast.success(`Welcome back, ${currentUser.displayName || "User"}!`);
+            // toast.success(`Welcome back, ${currentUser.displayName || "User"}!`);
             navigate(location.state || "/");
 
         } catch (error: any) {

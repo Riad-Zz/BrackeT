@@ -84,7 +84,7 @@ const Register = () => {
 
             setPreview(imageUpload);
             await new Promise((resolve) => setTimeout(resolve, 1500));
-            toast.success("Account created successfully!")
+            // toast.success("Account created successfully!")
             navigate(location.state || "/");
         } catch (error: any) {
             const message = error.message
