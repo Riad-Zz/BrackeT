@@ -34,6 +34,9 @@ const AuthProvider = ({children} : {children: React.ReactNode}) =>{
         return signOut(auth);
     }
 
+    // ============================= *** Register With Email and Password ***=====================
+    
+
 
     // =======================*** Observer to keep logged in a user ***========================
     useEffect(()=>{

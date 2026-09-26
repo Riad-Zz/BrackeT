@@ -50,7 +50,7 @@ const Login = () => {
         const result = await googleLogin();
         const currentUser = result.user;
         setUser(currentUser);
-        console.log(currentUser);
+        // console.log(currentUser);
         // ---------- Template of the user so that when backend is conncted we can save user info via api 
                 // const newUser = {
                 //     displayName: currentUser.displayName,
