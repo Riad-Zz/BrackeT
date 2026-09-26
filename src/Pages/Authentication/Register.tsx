@@ -32,7 +32,7 @@ const Register = () => {
     const [eye, setEye] = useState(false);
     const [preview, setPreview] = useState<string>(imageUpload);
     const imageInputRef = useRef<HTMLInputElement>(null);
-    const [loadingAction, setLoadingAction] = useState(false); // Global Loading State
+    const [loadingAction, setLoadingAction] = useState(false); 
     const { setUser, googleLogin, emailRegistration, updateUserProfile } = use(AuthContext)!;
 
     // ---------------- UI Handlers -------------------
