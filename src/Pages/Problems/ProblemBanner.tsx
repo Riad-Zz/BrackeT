@@ -2,6 +2,7 @@ import Model_Icon1 from "@/assets/Problemsolving.png";
 import Model_Icon2 from "@/assets/Rubik'scube .png";
 import { motion } from "framer-motion";
 
+
 const ProblemBanner = () => {
     return (
         <section className="relative w-full max-w-11/12 xl:max-w-7xl mx-auto my-8 md:my-10">
