@@ -41,7 +41,7 @@ const Navbar = () => {
                 <NavLink to={"/"}>Home</NavLink>{" "}
             </NavigationMenuItem>
             <NavigationMenuItem className={"font-medium text-[16px] mb-1 text-[#e2e2e2cc]"}>
-                <NavLink to={"/problem"}>Problem</NavLink>
+                <NavLink to={"/problems"}>Problem</NavLink>
             </NavigationMenuItem>
             <NavigationMenuItem className={"font-medium text-[16px] mb-1 text-[#e2e2e2cc]"}>
                 <NavLink to={"/rival"}>Rival</NavLink>

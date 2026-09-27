@@ -6,6 +6,7 @@ import AuthLayout from "@/Layouts/AuthLayout/AuthLayout"
 import Login from "@/Pages/Authentication/Login"
 import Register from "@/Pages/Authentication/Register"
 import { Loader } from "@/components/ui/Loader"
+import Problems from "@/Pages/Problems/Problems"
 // import About from "@/Pages/HomePage/About/About"
 export const router = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
         errorElement : <ErrorPage></ErrorPage>,
         children : [
             {index : true , Component : HomePage} ,
+            {path : 'problems' , Component : Problems} ,
         ]
     },
     {
