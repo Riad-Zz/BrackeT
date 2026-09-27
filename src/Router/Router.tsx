@@ -5,24 +5,24 @@ import ErrorPage from "@/Pages/Shared/ErrorPage/ErrorPage"
 import AuthLayout from "@/Layouts/AuthLayout/AuthLayout"
 import Login from "@/Pages/Authentication/Login"
 import Register from "@/Pages/Authentication/Register"
-import { Loader } from "@/components/ui/Loader"
 import Problems from "@/Pages/Problems/Problems"
+import pageLoader from "@/components/ui/pageLoader"
 // import About from "@/Pages/HomePage/About/About"
 export const router = createBrowserRouter([
     {
         path : '/' ,
         Component : Root ,
-        HydrateFallback : Loader ,
+        HydrateFallback : pageLoader ,
         errorElement : <ErrorPage></ErrorPage>,
         children : [
             {index : true , Component : HomePage} ,
-            {path : 'problems' , Component : Problems} ,
+            {path : 'problems' , Component : Problems , loader :()=> fetch("/mockProblems.json")} ,
         ]
     },
     {
         path : '/' ,
         Component : AuthLayout ,
-        HydrateFallback : Loader,
+        HydrateFallback : pageLoader,
         errorElement : <ErrorPage></ErrorPage> ,
         children : [
             {path : 'login' , Component : Login},

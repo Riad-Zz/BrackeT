@@ -1,0 +1,1009 @@
+[
+  {
+    "id": "p1",
+    "slug": "maximum-subarray",
+    "title": "Maximum Subarray",
+    "origin": "adapted",
+    "rating": 950,
+    "tags": [
+      "array",
+      "dp",
+      "kadane"
+    ],
+    "statement": {
+      "description": "Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum, and return that sum.",
+      "inputFormat": "First line: n.\nSecond line: n space-separated integers.",
+      "outputFormat": "A single integer — the maximum subarray sum.",
+      "notes": "The array may contain negative numbers.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ n ≤ 1e5",
+      "-1e4 ≤ nums[i] ≤ 1e4"
+    ],
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "9\n-2 1 -3 4 -1 2 1 -5 4",
+        "output": "6",
+        "explanation": "The subarray [4, -1, 2, 1] has the largest sum = 6."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "9\n-2 1 -3 4 -1 2 1 -5 4",
+          "output": "6"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "9\n-2 1 -3 4 -1 2 1 -5 4",
+          "output": "6"
+        },
+        {
+          "input": "1\n-5",
+          "output": "-5"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "5\n-1 -2 -3 -4 -5",
+          "output": "-1"
+        },
+        {
+          "input": "3\n1 2 3",
+          "output": "6"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function"
+    ],
+    "functionSignature": {
+      "name": "maxSubArray",
+      "params": [
+        {
+          "name": "nums",
+          "type": "number[]"
+        }
+      ],
+      "returnType": "number"
+    },
+    "starterCode": {
+      "javascript": "function maxSubArray(nums) {\n  // your code here\n}",
+      "python": "def max_sub_array(nums):\n    # your code here\n    pass",
+      "cpp": "int maxSubArray(vector<int>& nums) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Kadane's algorithm: track the best sum ending at the current index, reset it to the current element if it drops below that.",
+      "Watch the all-negative case — the answer must include at least one element."
+    ],
+    "editorial": {
+      "text": "Maintain `currentSum` and `maxSum`. At each element, currentSum = max(nums[i], currentSum + nums[i]); maxSum = max(maxSum, currentSum).",
+      "videoUrl": null,
+      "complexity": "O(n)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-01T00:00:00Z",
+    "updatedAt": "2026-09-01T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p2",
+    "slug": "longest-increasing-subsequence",
+    "title": "Longest Increasing Subsequence",
+    "origin": "adapted",
+    "rating": 1600,
+    "tags": [
+      "dp",
+      "binary-search"
+    ],
+    "statement": {
+      "description": "Given an integer array `nums`, return the length of the longest strictly increasing subsequence.",
+      "inputFormat": "First line: n.\nSecond line: n space-separated integers.",
+      "outputFormat": "A single integer — the length of the LIS.",
+      "notes": "A subsequence need not be contiguous.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ n ≤ 2.5e4",
+      "-1e4 ≤ nums[i] ≤ 1e4"
+    ],
+    "timeLimitMs": 1500,
+    "memoryLimitMb": 256,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "8\n10 9 2 5 3 7 101 18",
+        "output": "4",
+        "explanation": "The LIS is [2, 3, 7, 101] or [2, 3, 7, 18]."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "8\n10 9 2 5 3 7 101 18",
+          "output": "4"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "8\n10 9 2 5 3 7 101 18",
+          "output": "4"
+        },
+        {
+          "input": "1\n7",
+          "output": "1"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "6\n7 7 7 7 7 7",
+          "output": "1"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function"
+    ],
+    "functionSignature": {
+      "name": "lengthOfLIS",
+      "params": [
+        {
+          "name": "nums",
+          "type": "number[]"
+        }
+      ],
+      "returnType": "number"
+    },
+    "starterCode": {
+      "javascript": "function lengthOfLIS(nums) {\n  // your code here\n}",
+      "python": "def length_of_lis(nums):\n    # your code here\n    pass",
+      "cpp": "int lengthOfLIS(vector<int>& nums) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "O(n^2) DP works but won't scale for large n — think O(n log n) with binary search."
+    ],
+    "editorial": {
+      "text": "Maintain a `tails` array where tails[i] is the smallest possible tail of an increasing subsequence of length i+1. Binary search for the position to replace on each element.",
+      "videoUrl": null,
+      "complexity": "O(n log n)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-01T00:00:00Z",
+    "updatedAt": "2026-09-01T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p3",
+    "slug": "watermelon-split",
+    "title": "Watermelon Split",
+    "origin": "adapted",
+    "rating": 800,
+    "tags": [
+      "math",
+      "constructive"
+    ],
+    "statement": {
+      "description": "You are given an integer weight `w` of a watermelon. Determine whether it's possible to split it into two parts, each with a positive even weight, summing to `w`.",
+      "inputFormat": "A single integer w.",
+      "outputFormat": "Print \"YES\" if possible, otherwise \"NO\".",
+      "notes": "Read input from stdin, write output to stdout.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ w ≤ 100"
+    ],
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 64,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "8",
+        "output": "YES",
+        "explanation": "8 = 2 + 6, both even and positive."
+      },
+      {
+        "input": "3",
+        "output": "NO",
+        "explanation": "3 is odd, can't split into two even parts."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "8",
+          "output": "YES"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "8",
+          "output": "YES"
+        },
+        {
+          "input": "3",
+          "output": "NO"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "2",
+          "output": "NO"
+        },
+        {
+          "input": "100",
+          "output": "YES"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "full"
+    ],
+    "functionSignature": null,
+    "starterCode": null,
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Even weight ≥ 4 can always be split into two positive even parts."
+    ],
+    "editorial": {
+      "text": "w works if and only if w is even and w > 2.",
+      "videoUrl": null,
+      "complexity": "O(1)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-01T00:00:00Z",
+    "updatedAt": "2026-09-01T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p4",
+    "slug": "shortest-path-dijkstra",
+    "title": "Shortest Path in Weighted Graph",
+    "origin": "original",
+    "rating": 1900,
+    "tags": [
+      "graph",
+      "shortest-path",
+      "dijkstra"
+    ],
+    "statement": {
+      "description": "Given a weighted, undirected graph with `n` nodes and `m` edges, find the shortest distance from node 1 to node n.",
+      "inputFormat": "First line: n, m.\nNext m lines: u, v, w (edge between u and v with weight w).",
+      "outputFormat": "A single integer — shortest distance, or -1 if unreachable.",
+      "notes": "Edge weights are non-negative.",
+      "images": []
+    },
+    "constraints": [
+      "2 ≤ n ≤ 1e5",
+      "1 ≤ m ≤ 2e5",
+      "0 ≤ w ≤ 1e6"
+    ],
+    "timeLimitMs": 2000,
+    "memoryLimitMb": 256,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "4 4\n1 2 1\n2 3 2\n3 4 1\n1 4 10",
+        "output": "4",
+        "explanation": "Path 1→2→3→4 costs 1+2+1 = 4, cheaper than direct edge (10)."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "4 4\n1 2 1\n2 3 2\n3 4 1\n1 4 10",
+          "output": "4"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "2 1\n1 2 5",
+          "output": "5"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "3 1\n1 2 5",
+          "output": "-1"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function",
+      "full"
+    ],
+    "functionSignature": {
+      "name": "shortestPath",
+      "params": [
+        {
+          "name": "n",
+          "type": "number"
+        },
+        {
+          "name": "edges",
+          "type": "number[][]"
+        }
+      ],
+      "returnType": "number"
+    },
+    "starterCode": {
+      "javascript": "function shortestPath(n, edges) {\n  // your code here\n}",
+      "python": "def shortest_path(n, edges):\n    # your code here\n    pass",
+      "cpp": "int shortestPath(int n, vector<vector<int>>& edges) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Use Dijkstra's algorithm with a priority queue for O((n+m) log n).",
+      "Watch out for disconnected graphs — return -1 if node n is unreachable."
+    ],
+    "editorial": {
+      "text": "Standard Dijkstra with a min-heap. Track visited nodes and shortest known distances; relax edges as you pop from the heap.",
+      "videoUrl": null,
+      "complexity": "O((n + m) log n)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-01T00:00:00Z",
+    "updatedAt": "2026-09-01T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  } ,
+  
+  {
+    "id": "p5",
+    "slug": "two-sum",
+    "title": "Two Sum",
+    "origin": "adapted",
+    "rating": 900,
+    "tags": [
+      "array",
+      "hashing"
+    ],
+    "statement": {
+      "description": "Given an array of integers and a target value, find two distinct indices whose values add up to the target. Return the indices of the two elements.",
+      "inputFormat": "First line: n, target. Second line: n integers representing the array.",
+      "outputFormat": "Print two distinct indices whose values sum to target. If no such pair exists, print -1.",
+      "notes": "Indices are 0-based. It is guaranteed that at most one valid pair exists.",
+      "images": []
+    },
+    "constraints": [
+      "2 ≤ n ≤ 1e5",
+      "-1e9 ≤ target ≤ 1e9",
+      "-1e9 ≤ a[i] ≤ 1e9"
+    ],
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 128,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "5 9\n2 7 11 15 3",
+        "output": "0 1",
+        "explanation": "The elements at indices 0 and 1 are 2 and 7, and 2 + 7 = 9."
+      },
+      {
+        "input": "4 10\n1 2 3 4",
+        "output": "-1",
+        "explanation": "No two distinct elements have a sum of 10."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "5 9\n2 7 11 15 3",
+          "output": "0 1"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "2 6\n3 3",
+          "output": "0 1"
+        },
+        {
+          "input": "4 10\n1 2 3 4",
+          "output": "-1"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "6 0\n-3 8 1 3 -1 5",
+          "output": "0 3"
+        },
+        {
+          "input": "5 100\n10 20 30 40 50",
+          "output": "-1"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function",
+      "full"
+    ],
+    "functionSignature": {
+      "name": "twoSum",
+      "params": [
+        {
+          "name": "nums",
+          "type": "number[]"
+        },
+        {
+          "name": "target",
+          "type": "number"
+        }
+      ],
+      "returnType": "number[]"
+    },
+    "starterCode": {
+      "javascript": "function twoSum(nums, target) {\n  // your code here\n}",
+      "python": "def two_sum(nums, target):\n    # your code here\n    pass",
+      "cpp": "vector<int> twoSum(vector<int>& nums, int target) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "For each number, check whether its complement has already appeared.",
+      "A hash map can reduce the solution from O(n²) to O(n)."
+    ],
+    "editorial": {
+      "text": "Store previously seen values and their indices in a hash map. For each value x, check whether target - x has already been seen.",
+      "videoUrl": null,
+      "complexity": "O(n)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-28T00:00:00Z",
+    "updatedAt": "2026-09-28T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p6",
+    "slug": "maximum-subarray",
+    "title": "Maximum Subarray",
+    "origin": "adapted",
+    "rating": 1200,
+    "tags": [
+      "array",
+      "dynamic-programming",
+      "greedy"
+    ],
+    "statement": {
+      "description": "Given an array of integers, find the maximum possible sum of a non-empty contiguous subarray.",
+      "inputFormat": "First line: n. Second line: n integers representing the array.",
+      "outputFormat": "Print the maximum possible subarray sum.",
+      "notes": "The subarray must contain at least one element.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ n ≤ 2e5",
+      "-1e9 ≤ a[i] ≤ 1e9"
+    ],
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 128,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "9\n-2 1 -3 4 -1 2 1 -5 4",
+        "output": "6",
+        "explanation": "The subarray [4, -1, 2, 1] has the maximum sum: 6."
+      },
+      {
+        "input": "5\n-5 -2 -8 -1 -4",
+        "output": "-1",
+        "explanation": "When every value is negative, the best subarray contains the largest single value."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "9\n-2 1 -3 4 -1 2 1 -5 4",
+          "output": "6"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "3\n1 2 3",
+          "output": "6"
+        },
+        {
+          "input": "4\n-5 -2 -8 -1",
+          "output": "-1"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "6\n-2 -1 -3 -4 -1 -2",
+          "output": "-1"
+        },
+        {
+          "input": "7\n5 -2 3 -1 2 -8 4",
+          "output": "7"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function",
+      "full"
+    ],
+    "functionSignature": {
+      "name": "maxSubarray",
+      "params": [
+        {
+          "name": "nums",
+          "type": "number[]"
+        }
+      ],
+      "returnType": "number"
+    },
+    "starterCode": {
+      "javascript": "function maxSubarray(nums) {\n  // your code here\n}",
+      "python": "def max_subarray(nums):\n    # your code here\n    pass",
+      "cpp": "long long maxSubarray(vector<int>& nums) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Keep track of the best sum ending at the current position.",
+      "If the previous running sum becomes harmful, start a new subarray."
+    ],
+    "editorial": {
+      "text": "Use Kadane's algorithm. Maintain the maximum subarray sum ending at each position and update the global maximum.",
+      "videoUrl": null,
+      "complexity": "O(n)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-28T00:00:00Z",
+    "updatedAt": "2026-09-28T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p7",
+    "slug": "valid-parentheses",
+    "title": "Valid Parentheses",
+    "origin": "adapted",
+    "rating": 1000,
+    "tags": [
+      "stack",
+      "string"
+    ],
+    "statement": {
+      "description": "Given a string containing only the characters '(', ')', '{', '}', '[' and ']', determine whether the brackets are properly matched and nested.",
+      "inputFormat": "A single line containing the bracket string.",
+      "outputFormat": "Print \"YES\" if the string is valid, otherwise print \"NO\".",
+      "notes": "An empty string is considered valid.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ length(s) ≤ 1e5",
+      "s contains only '(', ')', '{', '}', '[' and ']'"
+    ],
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 64,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "()[]{}",
+        "output": "YES",
+        "explanation": "Every opening bracket is correctly matched with its corresponding closing bracket."
+      },
+      {
+        "input": "([)]",
+        "output": "NO",
+        "explanation": "The brackets are incorrectly nested."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "()[]{}",
+          "output": "YES"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "([{}])",
+          "output": "YES"
+        },
+        {
+          "input": "([)]",
+          "output": "NO"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "(((",
+          "output": "NO"
+        },
+        {
+          "input": "{}[]()",
+          "output": "YES"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function",
+      "full"
+    ],
+    "functionSignature": {
+      "name": "isValid",
+      "params": [
+        {
+          "name": "s",
+          "type": "string"
+        }
+      ],
+      "returnType": "boolean"
+    },
+    "starterCode": {
+      "javascript": "function isValid(s) {\n  // your code here\n}",
+      "python": "def is_valid(s):\n    # your code here\n    pass",
+      "cpp": "bool isValid(string s) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Use a stack to remember the opening brackets.",
+      "When a closing bracket appears, it must match the most recent opening bracket."
+    ],
+    "editorial": {
+      "text": "Push every opening bracket onto a stack. For each closing bracket, check that it matches the stack's top element. The stack must be empty after processing the entire string.",
+      "videoUrl": null,
+      "complexity": "O(n)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-28T00:00:00Z",
+    "updatedAt": "2026-09-28T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p8",
+    "slug": "counting-components",
+    "title": "Counting Connected Components",
+    "origin": "original",
+    "rating": 1400,
+    "tags": [
+      "graph",
+      "dfs",
+      "bfs"
+    ],
+    "statement": {
+      "description": "Given an undirected graph with n vertices and m edges, determine the number of connected components in the graph.",
+      "inputFormat": "First line: n, m. Next m lines: u, v representing an undirected edge between vertices u and v.",
+      "outputFormat": "Print the number of connected components.",
+      "notes": "Vertices are numbered from 1 to n. Multiple edges between the same pair of vertices may not appear.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ n ≤ 1e5",
+      "0 ≤ m ≤ 2e5",
+      "1 ≤ u, v ≤ n",
+      "u ≠ v"
+    ],
+    "timeLimitMs": 1500,
+    "memoryLimitMb": 128,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "5 3\n1 2\n2 3\n4 5",
+        "output": "2",
+        "explanation": "Vertices 1, 2, 3 form one component and vertices 4, 5 form another."
+      },
+      {
+        "input": "4 0",
+        "output": "4",
+        "explanation": "With no edges, every vertex is an independent component."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "5 3\n1 2\n2 3\n4 5",
+          "output": "2"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "3 2\n1 2\n2 3",
+          "output": "1"
+        },
+        {
+          "input": "4 0",
+          "output": "4"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "6 2\n1 2\n5 6",
+          "output": "4"
+        },
+        {
+          "input": "7 6\n1 2\n2 3\n3 4\n5 6\n6 7\n1 4",
+          "output": "2"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function",
+      "full"
+    ],
+    "functionSignature": {
+      "name": "countComponents",
+      "params": [
+        {
+          "name": "n",
+          "type": "number"
+        },
+        {
+          "name": "edges",
+          "type": "number[][]"
+        }
+      ],
+      "returnType": "number"
+    },
+    "starterCode": {
+      "javascript": "function countComponents(n, edges) {\n  // your code here\n}",
+      "python": "def count_components(n, edges):\n    # your code here\n    pass",
+      "cpp": "int countComponents(int n, vector<vector<int>>& edges) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Build an adjacency list for the graph.",
+      "Start a DFS or BFS from every unvisited vertex and count how many searches are started."
+    ],
+    "editorial": {
+      "text": "Traverse the graph using DFS or BFS. Every time an unvisited vertex is found, start a new traversal and increment the component count.",
+      "videoUrl": null,
+      "complexity": "O(n + m)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-28T00:00:00Z",
+    "updatedAt": "2026-09-28T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  },
+  {
+    "id": "p9",
+    "slug": "range-sum-queries",
+    "title": "Range Sum Queries",
+    "origin": "original",
+    "rating": 1500,
+    "tags": [
+      "array",
+      "prefix-sum"
+    ],
+    "statement": {
+      "description": "You are given an array of n integers and q queries. For each query [l, r], find the sum of all elements from index l through index r inclusive.",
+      "inputFormat": "First line: n, q. Second line: n integers. Next q lines: l, r.",
+      "outputFormat": "For each query, print the sum of the requested range on a separate line.",
+      "notes": "Indices are 0-based and each query satisfies 0 ≤ l ≤ r < n.",
+      "images": []
+    },
+    "constraints": [
+      "1 ≤ n ≤ 2e5",
+      "1 ≤ q ≤ 2e5",
+      "-1e9 ≤ a[i] ≤ 1e9",
+      "0 ≤ l ≤ r < n"
+    ],
+    "timeLimitMs": 1500,
+    "memoryLimitMb": 128,
+    "languageTimeMultiplier": {
+      "java": 2,
+      "python": 3
+    },
+    "examples": [
+      {
+        "input": "5 3\n1 2 3 4 5\n0 2\n1 3\n2 4",
+        "output": "6\n9\n12",
+        "explanation": "The three ranges have sums 1+2+3 = 6, 2+3+4 = 9, and 3+4+5 = 12."
+      }
+    ],
+    "testCases": {
+      "public": [
+        {
+          "input": "5 3\n1 2 3 4 5\n0 2\n1 3\n2 4",
+          "output": "6\n9\n12"
+        }
+      ],
+      "pretests": [
+        {
+          "input": "3 2\n5 10 15\n0 0\n0 2",
+          "output": "5\n30"
+        }
+      ],
+      "hidden": [
+        {
+          "input": "4 3\n-5 10 -2 7\n0 3\n1 2\n2 3",
+          "output": "10\n8\n5"
+        },
+        {
+          "input": "5 2\n1000000000 1000000000 1000000000 1000000000 1000000000\n0 4\n2 4",
+          "output": "5000000000\n3000000000"
+        }
+      ]
+    },
+    "checkerType": "exact",
+    "checkerScript": null,
+    "floatTolerance": null,
+    "submissionModes": [
+      "function",
+      "full"
+    ],
+    "functionSignature": {
+      "name": "rangeSums",
+      "params": [
+        {
+          "name": "nums",
+          "type": "number[]"
+        },
+        {
+          "name": "queries",
+          "type": "number[][]"
+        }
+      ],
+      "returnType": "number[]"
+    },
+    "starterCode": {
+      "javascript": "function rangeSums(nums, queries) {\n  // your code here\n}",
+      "python": "def range_sums(nums, queries):\n    # your code here\n    pass",
+      "cpp": "vector<long long> rangeSums(vector<int>& nums, vector<vector<int>>& queries) {\n    // your code here\n}"
+    },
+    "allowedLanguages": [
+      "javascript",
+      "python",
+      "cpp"
+    ],
+    "hints": [
+      "Computing every query directly can be too slow.",
+      "Build a prefix sum array so each range can be answered in O(1)."
+    ],
+    "editorial": {
+      "text": "Construct a prefix sum array where prefix[i] stores the sum of the first i elements. Each query [l, r] is then answered as prefix[r + 1] - prefix[l].",
+      "videoUrl": null,
+      "complexity": "O(n + q)"
+    },
+    "status": "published",
+    "visibility": "public",
+    "authorId": "author_riad",
+    "contributorIds": [],
+    "createdAt": "2026-09-28T00:00:00Z",
+    "updatedAt": "2026-09-28T00:00:00Z",
+    "stats": {
+      "submissions": 0,
+      "acceptedCount": 0,
+      "acceptanceRate": 0
+    }
+  }
+]
