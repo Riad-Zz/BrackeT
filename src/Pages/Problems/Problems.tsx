@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs,  TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProblemBanner from "./ProblemBanner";
 import { VscTerminalPowershell } from "react-icons/vsc";
 import { LuArchive } from "react-icons/lu";
@@ -18,7 +18,7 @@ const Problems = () => {
     const [search, setSearch] = useState("");
     const [topicFilter, setTopicFilter] = useState("alltopic") ;
     // console.log(topicFilter) ;
-    const [filteredProblems  , setFilteredProblems] = useState(useLoaderData()) ;
+    const [filteredProblems] = useState(useLoaderData()) ;
     // console.log(filteredProblems) ;
     // const filteredProblems = useLoaderData() ;
     
