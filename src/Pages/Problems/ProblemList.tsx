@@ -1,6 +1,8 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { useNavigate } from "react-router";
 
 const ProblemList = ({ filteredProblems }: any) => {
+    const navigate =useNavigate() ;
     return (
         
         <div className="rounded-sm border border-foreground/10 bg-background overflow-hidden shadow-2xl mt-6">
@@ -27,6 +29,7 @@ const ProblemList = ({ filteredProblems }: any) => {
                     (
                         filteredProblems.map((prob: any) => (
                             <TableRow 
+                                onClick={()=> navigate(`/problem/details/${prob.slug}`)}
                                 key={prob.id}
                                 className="border-b border-foreground/5 hover:bg-foreground/4 transition-colors group cursor-pointer"
                             >

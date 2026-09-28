@@ -7,6 +7,7 @@ import Login from "@/Pages/Authentication/Login"
 import Register from "@/Pages/Authentication/Register"
 import Problems from "@/Pages/Problems/Problems"
 import pageLoader from "@/components/ui/pageLoader"
+import ProblemDetails from "@/Pages/Problems/ProblemDetails"
 // import About from "@/Pages/HomePage/About/About"
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,12 @@ export const router = createBrowserRouter([
             {index : true , Component : HomePage} ,
             {path : 'problems' , Component : Problems , loader :()=> fetch("/mockProblems.json")} ,
         ]
+    },
+    {
+        path : 'problem/details/:slug' ,
+        Component : ProblemDetails ,
+        HydrateFallback : pageLoader ,
+        errorElement : <ErrorPage></ErrorPage>
     },
     {
         path : '/' ,
