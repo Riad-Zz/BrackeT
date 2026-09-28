@@ -154,7 +154,7 @@ const ProblemDetails = () => {
                             <ResizablePanel defaultSize={65}>
                                 <div className="flex flex-col h-full w-full rounded-sm border border-foreground/5 bg-foreground/2 overflow-hidden shadow-sm">
                                     <div className="h-12 flex items-center justify-between px-3 bg-foreground/6 border-b border-foreground/10">
-                                        <Select value={language} onValueChange={setLanguage} >
+                                        <Select value={language} onValueChange={(value) => setLanguage(value ?? "javascript")} >
                                             <SelectTrigger className="h-8 w-35 bg-foreground/10 border-none text-xs font-semibold text-foreground focus:ring-0 focus:ring-offset-0">
                                                 <SelectValue placeholder="Language" />
                                             </SelectTrigger>
