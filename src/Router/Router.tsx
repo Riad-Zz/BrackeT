@@ -24,7 +24,8 @@ export const router = createBrowserRouter([
         path : 'problem/details/:slug' ,
         Component : ProblemDetails ,
         HydrateFallback : pageLoader ,
-        errorElement : <ErrorPage></ErrorPage>
+        errorElement : <ErrorPage></ErrorPage> ,
+        loader : ()=>fetch("/mockProblems.json") ,
     },
     {
         path : '/' ,
