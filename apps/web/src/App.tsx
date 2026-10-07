@@ -13,7 +13,7 @@ function App() {
   }
 
   const some = {
-    Na : "heeee"
+    Na : "heeeee"
   }
 
 
