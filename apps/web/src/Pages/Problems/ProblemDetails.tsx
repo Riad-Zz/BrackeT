@@ -22,6 +22,13 @@ const ProblemDetails = () => {
     const allProblem = useLoaderData() as any[];
     const currentProblem = allProblem.find((problem: any) => problem.slug === slug);
     const [language, setLanguage] = useState<string>(currentProblem?.allowedLanguages?.[0] || "javascript");
+    const [activeTestCase, setActiveTestCase] = useState<number>(0);
+
+    const testCases = (currentProblem?.testCases?.pretests?.length
+        ? currentProblem.testCases.pretests
+        : currentProblem?.testCases?.public?.length
+        ? currentProblem.testCases.public
+        : currentProblem?.examples) || [];
 
     const auraColor = ["#ffffff", "#eefed1", "#dffb15", "#4bc69d", "#38bdf8", "#0052d8", "#d8ecff", "#ffffff"];
 
@@ -230,12 +237,52 @@ const ProblemDetails = () => {
                             
                             {/*----------------------*** Test Cases Section ***---------------------------- */}
                             <ResizablePanel defaultSize={35}>
-                                <div className="flex flex-col h-full w-full rounded-sm border border-foreground/5 bg-foreground/4 overflow-hidden shadow-sm">
-                                    <div className="h-10 flex items-center px-4 bg-foreground/6 border-b border-foreground/10">
-                                        <span className="text-xs font-bold uppercase tracking-wider text-foreground/60">Test Cases</span>
+                                <div className="flex flex-col h-full w-full rounded-sm border border-foreground/5 bg-foreground/2 overflow-hidden shadow-sm">
+                                    <div className="h-10 flex items-center justify-between px-3 bg-foreground/6 border-b border-foreground/10 shrink-0">
+                                        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                                            <span className="text-xs font-bold uppercase tracking-wider text-foreground/60 mr-2 shrink-0">Test Cases</span>
+                                            <div className="flex items-center gap-1.5 shrink-0">
+                                                {testCases.map((_: any, idx: number) => (
+                                                    <button
+                                                        key={idx}
+                                                        onClick={() => setActiveTestCase(idx)}
+                                                        className={`px-3 py-1 text-xs font-mono font-medium rounded transition-colors cursor-pointer ${
+                                                            activeTestCase === idx
+                                                                ? "bg-foreground/15 text-accent font-semibold shadow-sm"
+                                                                : "bg-foreground/4 text-foreground/60 hover:text-foreground hover:bg-foreground/10"
+                                                        }`}
+                                                    >
+                                                        Case {idx + 1}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="flex-1 flex items-center justify-center text-foreground/40 font-mono text-sm">
-                                        Test cases console goes here
+                                    <div className="flex-1 overflow-y-auto p-4 no-scrollbar">
+                                        {testCases.length > 0 && testCases[activeTestCase] ? (
+                                            <div className="space-y-4 max-w-2xl">
+                                                <div>
+                                                    <span className="font-bold text-foreground/40 text-[10px] uppercase tracking-[0.15em] block mb-1.5">
+                                                        Input
+                                                    </span>
+                                                    <div className="bg-black/30 border border-foreground/5 p-3 rounded-sm text-xs font-mono text-foreground/80 whitespace-pre-wrap select-text">
+                                                        {testCases[activeTestCase].input}
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span className="font-bold text-foreground/40 text-[10px] uppercase tracking-[0.15em] block mb-1.5">
+                                                        Expected Output
+                                                    </span>
+                                                    <div className="bg-black/30 border border-foreground/5 p-3 rounded-sm text-xs font-mono text-foreground/80 whitespace-pre-wrap select-text">
+                                                        {testCases[activeTestCase].output}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <div className="flex h-full items-center justify-center text-foreground/40 font-mono text-xs">
+                                                No test cases available for this problem.
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </ResizablePanel>
