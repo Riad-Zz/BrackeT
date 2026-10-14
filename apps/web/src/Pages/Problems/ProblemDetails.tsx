@@ -152,7 +152,7 @@ const ProblemDetails = () => {
                                         <div className="mb-10">
                                             <h2 className="text-lg font-bold text-foreground mb-4 tracking-wide flex items-center gap-2">
                                                 <Lightbulb className="size-4 text-accent" />
-                                                <span>Hints</span>
+                                                <span>Hints ({currentProblem.hints.length})</span>
                                             </h2>
                                             <Accordion className="flex flex-col gap-2.5">
                                                 {currentProblem.hints.map((hint: string, idx: number) => (
@@ -181,7 +181,7 @@ const ProblemDetails = () => {
                         </div>
                     </ResizablePanel>
 
-                    <ResizableHandle className="bg-transparent" />
+                    <ResizableHandle className="w-1 bg-foreground/5 hover:bg-accent/40 active:bg-accent transition-colors cursor-col-resize" />
                     
                     {/* -----------------*** RIGHT PANEL: EDITOR & TEST CASES ** --------------------------------- */}
                     <ResizablePanel defaultSize={50}>
@@ -232,7 +232,7 @@ const ProblemDetails = () => {
                                 </div>
                             </ResizablePanel>
                             
-                            <ResizableHandle className="bg-transparent" />
+                            <ResizableHandle className="h-1 bg-foreground/5 hover:bg-accent/40 active:bg-accent transition-colors cursor-row-resize" />
                             
                             
                             {/*----------------------*** Test Cases Section ***---------------------------- */}
@@ -240,7 +240,7 @@ const ProblemDetails = () => {
                                 <div className="flex flex-col h-full w-full rounded-sm border border-foreground/5 bg-foreground/2 overflow-hidden shadow-sm">
                                     <div className="h-10 flex items-center justify-between px-3 bg-foreground/6 border-b border-foreground/10 shrink-0">
                                         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-                                            <span className="text-xs font-bold uppercase tracking-wider text-foreground/60 mr-2 shrink-0">Test Cases</span>
+                                            <span className="text-xs font-bold uppercase tracking-wider text-foreground/60 mr-2 shrink-0">Test Cases ({testCases.length})</span>
                                             <div className="flex items-center gap-1.5 shrink-0">
                                                 {testCases.map((_: any, idx: number) => (
                                                     <button
