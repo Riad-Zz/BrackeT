@@ -13,6 +13,8 @@ import MainLogo from "@/assets/MainLogo.png";
 import Avatar1 from "@/assets/TempProfile.jpeg";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import Editor from '@monaco-editor/react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Lightbulb } from "lucide-react";
 
 const ProblemDetails = () => {
     const { slug } = useParams();
@@ -135,6 +137,34 @@ const ProblemDetails = () => {
                                                     </div>
                                                 ))}
                                             </div>
+                                        </div>
+                                    )}
+
+                                    {/* -------------------*** Hints Section ***------------------- */}
+                                    {currentProblem.hints?.length > 0 && (
+                                        <div className="mb-10">
+                                            <h2 className="text-lg font-bold text-foreground mb-4 tracking-wide flex items-center gap-2">
+                                                <Lightbulb className="size-4 text-accent" />
+                                                <span>Hints</span>
+                                            </h2>
+                                            <Accordion className="flex flex-col gap-2.5">
+                                                {currentProblem.hints.map((hint: string, idx: number) => (
+                                                    <AccordionItem
+                                                        key={idx}
+                                                        value={`hint-${idx}`}
+                                                        className="border border-foreground/10 bg-foreground/2 px-4 rounded-sm"
+                                                    >
+                                                        <AccordionTrigger className="py-3 text-left text-sm font-semibold text-foreground/80 hover:text-accent transition-colors hover:no-underline cursor-pointer">
+                                                            <span className="flex items-center gap-2 font-mono text-xs">
+                                                                <span className="text-accent">Hint {idx + 1}</span>
+                                                            </span>
+                                                        </AccordionTrigger>
+                                                        <AccordionContent className="pb-4 pt-1 text-sm text-foreground/70 font-mono leading-relaxed border-t border-foreground/5">
+                                                            {hint}
+                                                        </AccordionContent>
+                                                    </AccordionItem>
+                                                ))}
+                                            </Accordion>
                                         </div>
                                     )}
                                 </div>
