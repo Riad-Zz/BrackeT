@@ -40,24 +40,17 @@ const About = () => {
 
     return (
         <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background text-foreground">
-            {/* Background Grid Pattern with Radial Gradient Mask */}
-            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden pointer-events-none">
+            {/* Background Grid Pattern matching HomePage */}
+            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center">
                 <GridPattern
-                    width={44}
-                    height={44}
+                    width={40}
+                    height={40}
                     x={-1}
                     y={-1}
                     className={cn(
-                        "h-full w-full [mask-image:radial-gradient(900px_circle_at_center,white,transparent)] opacity-40 stroke-white/10 fill-white/5"
+                        "h-full w-full [mask-image:radial-gradient(860px_circle_at_center,white,transparent)]"
                     )}
                 />
-            </div>
-
-            {/* Ambient Dynamic Glow Orbs */}
-            <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
-                <div className="absolute left-[-10%] top-[4%] h-[550px] w-[550px] rounded-full bg-primary/10 blur-[140px]" />
-                <div className="absolute right-[-10%] top-[30%] h-[500px] w-[500px] rounded-full bg-accent/10 blur-[150px]" />
-                <div className="absolute left-[25%] bottom-[15%] h-[450px] w-[450px] rounded-full bg-secondary/10 blur-[140px]" />
             </div>
 
             <div className="w-[92%] max-w-7xl mx-auto py-12 sm:py-16 md:py-24 flex flex-col gap-20 sm:gap-24 md:gap-32">
