@@ -8,7 +8,7 @@ import Register from "@/Pages/Authentication/Register"
 import Problems from "@/Pages/Problems/Problems"
 import pageLoader from "@/components/ui/pageLoader"
 import ProblemDetails from "@/Pages/Problems/ProblemDetails"
-import About from "@/Pages/HomePage/About/About"
+import About from "@/Pages/About/About"
 export const router = createBrowserRouter([
     {
         path : '/' ,
