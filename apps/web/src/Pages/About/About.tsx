@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router";
 import { motion, type Variants } from "framer-motion";
 import {
@@ -33,24 +32,30 @@ const itemVariants: Variants = {
 };
 
 const About = () => {
-    useEffect(() => {
-        document.title = "About Us | BrackeT ⚡ The Competitive Coding Arena";
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background text-foreground">
-            {/* Background Grid Pattern matching HomePage */}
-            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center">
+            {/* Background Magic UI Grid Pattern and Subtle Glow */}
+            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center pointer-events-none">
                 <GridPattern
                     width={40}
                     height={40}
                     x={-1}
                     y={-1}
+                    strokeDasharray="4 2"
+                    squares={[
+                        [4, 3],
+                        [2, 1],
+                        [7, 3],
+                        [10, 6],
+                        [6, 8],
+                        [12, 4],
+                        [8, 12],
+                    ]}
                     className={cn(
                         "h-full w-full [mask-image:radial-gradient(860px_circle_at_center,white,transparent)]"
                     )}
                 />
+                <div className="absolute top-[8%] h-[380px] w-[500px] rounded-full bg-accent/10 blur-[130px] -z-10" />
             </div>
 
             <div className="w-[92%] max-w-7xl mx-auto py-12 sm:py-16 md:py-24 flex flex-col gap-20 sm:gap-24 md:gap-32">
