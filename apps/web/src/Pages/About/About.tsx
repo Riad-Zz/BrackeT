@@ -55,7 +55,7 @@ const About = () => {
 
             <div className="w-[92%] max-w-7xl mx-auto py-12 sm:py-16 md:py-24 flex flex-col gap-20 sm:gap-24 md:gap-32">
 
-                {/* 2. Who We Are & Mission Section */}
+                {/* Who We Are & Mission Section */}
                 <motion.section
                     aria-labelledby="who-we-are-title"
                     initial="hidden"
@@ -107,10 +107,10 @@ const About = () => {
                             <div className="flex items-center gap-4">
                                 <img src={MainLogo} alt="BrackeT Logo" className="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow" />
                                 <div>
-                                    <h3 className="text-xl sm:text-2xl font-bold font-special text-foreground flex items-center gap-2">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-foreground flex items-center gap-2">
                                         BrackeT.io
                                     </h3>
-                                    <p className="text-xs text-foreground/60 font-special">
+                                    <p className="text-xs text-foreground/60">
                                         Competitive Esports Arena • Beta v0.0.1
                                     </p>
                                 </div>
@@ -149,7 +149,7 @@ const About = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-foreground text-sm">Verified Credentials</h4>
-                                        <p className="text-foreground/70 text-xs mt-0.5 font-special">
+                                        <p className="text-foreground/70 text-xs mt-0.5">
                                             Trade License: 124154 • Open Source Monorepo
                                         </p>
                                     </div>
@@ -159,7 +159,7 @@ const About = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* 6. Contact & Inquiry Section */}
+                {/* Contact & Inquiry Section */}
                 <ContactSection />
 
             </div>
