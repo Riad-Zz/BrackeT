@@ -55,7 +55,7 @@ const Footer = () => {
                                 <NavLink to={"/"} className={linkHoverStyle}>Home</NavLink>
                             </li>
                             <li className="font-medium text-[16px] mb-2 text-card-foreground/80">
-                                <NavLink to={"/problem"} className={linkHoverStyle}>Problem</NavLink>
+                                <NavLink to={"/problems"} className={linkHoverStyle}>Problem</NavLink>
                             </li>
                             <li className="font-medium text-[16px] mb-2 text-card-foreground/80">
                                 <NavLink to={"/rival"} className={linkHoverStyle}>Rival</NavLink>
