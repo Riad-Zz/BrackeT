@@ -35,7 +35,7 @@ const About = () => {
     return (
         <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background text-foreground">
             {/* Background Magic UI Grid Pattern and Subtle Glow */}
-            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center pointer-events-none">
+            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden pointer-events-none select-none">
                 <GridPattern
                     width={40}
                     height={40}
@@ -50,12 +50,14 @@ const About = () => {
                         [6, 8],
                         [12, 4],
                         [8, 12],
+                        [15, 8],
                     ]}
                     className={cn(
-                        "h-full w-full [mask-image:radial-gradient(860px_circle_at_center,white,transparent)]"
+                        "h-full w-full [mask-image:radial-gradient(900px_circle_at_50%_35%,white,transparent)] opacity-90 stroke-white/10 fill-white/5"
                     )}
                 />
-                <div className="absolute top-[8%] h-[380px] w-[500px] rounded-full bg-accent/10 blur-[130px] -z-10" />
+                {/* Subtle ambient accent glow behind hero section, echoing HomePage Hero glow */}
+                <div className="absolute top-[6%] h-[320px] w-[320px] sm:h-[420px] sm:w-[540px] rounded-full bg-accent/10 blur-[140px] -z-10 opacity-70" />
             </div>
 
             <div className="w-[92%] max-w-7xl mx-auto py-12 sm:py-16 md:py-24 flex flex-col gap-20 sm:gap-24 md:gap-32">
