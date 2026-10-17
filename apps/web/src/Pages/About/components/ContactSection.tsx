@@ -155,7 +155,7 @@ export const ContactSection: React.FC = () => {
                     <MessageSquare className="w-3.5 h-3.5 text-accent" />
                     <span>Get in Touch & Support</span>
                 </div>
-                <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
+                <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
                     Contact Us & Connect With the Arena
                 </h2>
                 <p className="text-xs sm:text-sm md:text-base text-foreground/70">
@@ -179,7 +179,7 @@ export const ContactSection: React.FC = () => {
                                     <Mail className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-foreground text-base font-heading">Direct Email</h3>
+                                    <h3 className="font-bold text-foreground text-base">Direct Email</h3>
                                     <p className="text-xs text-foreground/60 font-special">Official inquiries & support</p>
                                 </div>
                             </div>
@@ -225,7 +225,7 @@ export const ContactSection: React.FC = () => {
                                 <Phone className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-foreground text-base font-heading">Helpline Numbers</h3>
+                                <h3 className="font-bold text-foreground text-base">Helpline Numbers</h3>
                                 <p className="text-xs text-foreground/60 flex items-center gap-1 mt-0.5 font-special">
                                     <Clock className="w-3 h-3 text-secondary" />
                                     Available: 10:00 AM – 5:00 PM (BST)
@@ -271,18 +271,18 @@ export const ContactSection: React.FC = () => {
                                 <Shield className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-foreground text-base font-heading">Platform Credentials</h3>
+                                <h3 className="font-bold text-foreground text-base">Platform Credentials</h3>
                                 <p className="text-xs text-foreground/60 font-special">Registered platform information</p>
                             </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-3 text-xs pt-2">
                             <div className="rounded-lg bg-background/50 p-2.5 border border-border/30">
-                                <span className="text-foreground/60 block font-sans">Trade License</span>
+                                <span className="text-foreground/60 block">Trade License</span>
                                 <span className="font-special font-semibold text-accent text-sm">124154</span>
                             </div>
                             <div className="rounded-lg bg-background/50 p-2.5 border border-border/30">
-                                <span className="text-foreground/60 block font-sans">Platform Build</span>
+                                <span className="text-foreground/60 block">Platform Build</span>
                                 <span className="font-special font-semibold text-foreground text-sm">Beta v0.0.1</span>
                             </div>
                         </div>
@@ -311,7 +311,7 @@ export const ContactSection: React.FC = () => {
                                     >
                                         <Icon className="w-5 h-5 text-foreground/75 group-hover:text-accent group-hover:scale-110 transition-all shrink-0" />
                                         <div className="min-w-0">
-                                            <span className="text-xs font-semibold text-foreground group-hover:text-accent block truncate font-heading">
+                                            <span className="text-xs font-semibold text-foreground group-hover:text-accent block truncate">
                                                 {s.name}
                                             </span>
                                             <span className="text-[10px] text-foreground/50 block truncate font-special">
@@ -359,7 +359,7 @@ export const ContactSection: React.FC = () => {
                             <form onSubmit={handleSubmit} noValidate className="space-y-6">
                                 <div className="flex items-center justify-between border-b border-border/30 pb-4">
                                     <div>
-                                        <h3 className="text-xl font-bold text-foreground font-heading">
+                                        <h3 className="text-xl font-bold text-foreground">
                                             Send a Direct Inquiry
                                         </h3>
                                         <p className="text-xs text-foreground/60 mt-0.5">

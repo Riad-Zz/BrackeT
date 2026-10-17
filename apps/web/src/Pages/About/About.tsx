@@ -39,7 +39,7 @@ const About = () => {
     }, []);
 
     return (
-        <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background text-foreground font-sans">
+        <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background text-foreground">
             {/* Background Grid Pattern with Radial Gradient Mask */}
             <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden pointer-events-none">
                 <GridPattern
@@ -76,7 +76,7 @@ const About = () => {
                             <div className="p-2.5 rounded-lg bg-primary/20 text-accent border border-primary/30">
                                 <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                             </div>
-                            <h2 id="who-we-are-title" className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-tight">
+                            <h2 id="who-we-are-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
                                 Who We Are & Why BrackeT Exists
                             </h2>
                         </div>
