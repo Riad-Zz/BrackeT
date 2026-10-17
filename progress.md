@@ -102,7 +102,7 @@
 - [ ] User Profile & Match History (`/profile`, `/rivalhistory`).
 - [ ] Tech Interview Preparation Mode (`/interview`).
 - [ ] Settings Page (`/setting`).
-- [ ] About Page content completion (`About.tsx`).
+- [x] About Page content completion (`About.tsx`) — complete with introduction, who we are, platform pillars, core principles, useful links, and verified contact channels.
 
 ---
 
@@ -151,4 +151,4 @@
 1. **Test Runner Console**: Complete the test cases panel in `ProblemDetails.tsx` to accept custom inputs and render test execution results.
 2. **Problem API Endpoints**: Migrate static `mockProblems.json` to backend REST routes in `apps/api`.
 3. **Sandbox Execution Integration**: Implement or integrate an execution engine (Judge0 or Docker runner) to compile C++, Python, JavaScript, and Java submissions.
-4. **Route Completers**: Replace placeholder routes (`/rival`, `/about`, `/interview`, `/profile`) with dedicated interface components to avoid 404 error fallbacks.
+4. **Route Completers**: Replace remaining placeholder routes (`/rival`, `/interview`, `/profile`) with dedicated interface components (`/about` completed).
