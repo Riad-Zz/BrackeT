@@ -16,6 +16,8 @@ import {
 import MainLogo from "@/assets/MainLogo.png";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Button } from "@/components/ui/button";
+import { ContactSection } from "./components/ContactSection";
+import { Compass, ExternalLink } from "lucide-react";
 
 const About = () => {
     useEffect(() => {
@@ -308,6 +310,115 @@ const About = () => {
                         })}
                     </div>
                 </section>
+
+                {/* 5. Useful Links & Platform Navigation */}
+                <section aria-labelledby="useful-links-title" className="flex flex-col space-y-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/30 pb-4">
+                        <div>
+                            <div className="flex items-center gap-2 text-accent text-xs font-special uppercase tracking-wider mb-1">
+                                <Compass className="w-4 h-4" />
+                                <span>Platform Directory</span>
+                            </div>
+                            <h2 id="useful-links-title" className="text-2xl sm:text-3xl font-bold tracking-tight">
+                                Useful Links & Navigation
+                            </h2>
+                        </div>
+                        <p className="text-xs sm:text-sm text-foreground/60 max-w-md">
+                            Jump straight into the competitive arena, explore problems, or examine the open-source repository.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <Link
+                            to="/problems"
+                            className="group rounded-xl border border-border/40 bg-card/60 p-5 backdrop-blur-sm hover:border-accent/60 hover:bg-card/90 transition-all flex flex-col justify-between"
+                        >
+                            <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                    <BookOpen className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                                    <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                                </div>
+                                <h3 className="font-bold text-foreground text-base group-hover:text-accent transition-colors">
+                                    Problem Catalog
+                                </h3>
+                                <p className="text-xs text-foreground/70">
+                                    Browse algorithmic challenges categorized by topic, tags, and numerical ratings.
+                                </p>
+                            </div>
+                            <span className="text-[11px] font-special text-accent mt-4">
+                                Browse Problems →
+                            </span>
+                        </Link>
+
+                        <Link
+                            to="/rival"
+                            className="group rounded-xl border border-border/40 bg-card/60 p-5 backdrop-blur-sm hover:border-accent/60 hover:bg-card/90 transition-all flex flex-col justify-between"
+                        >
+                            <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                    <Swords className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                                    <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                                </div>
+                                <h3 className="font-bold text-foreground text-base group-hover:text-accent transition-colors">
+                                    1v1 Rival Arena
+                                </h3>
+                                <p className="text-xs text-foreground/70">
+                                    Queue up against matched opponents with synchronized clocks and live status.
+                                </p>
+                            </div>
+                            <span className="text-[11px] font-special text-accent mt-4">
+                                Enter Arena →
+                            </span>
+                        </Link>
+
+                        <Link
+                            to="/interview"
+                            className="group rounded-xl border border-border/40 bg-card/60 p-5 backdrop-blur-sm hover:border-accent/60 hover:bg-card/90 transition-all flex flex-col justify-between"
+                        >
+                            <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                    <Code2 className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                                    <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                                </div>
+                                <h3 className="font-bold text-foreground text-base group-hover:text-accent transition-colors">
+                                    Interview Prep
+                                </h3>
+                                <p className="text-xs text-foreground/70">
+                                    Simulate high-pressure technical interview environments and time constraints.
+                                </p>
+                            </div>
+                            <span className="text-[11px] font-special text-accent mt-4">
+                                Start Session →
+                            </span>
+                        </Link>
+
+                        <a
+                            href="https://github.com/Riad-Zz/BrackeT"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group rounded-xl border border-border/40 bg-card/60 p-5 backdrop-blur-sm hover:border-accent/60 hover:bg-card/90 transition-all flex flex-col justify-between"
+                        >
+                            <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                    <ExternalLink className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                                    <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                                </div>
+                                <h3 className="font-bold text-foreground text-base group-hover:text-accent transition-colors">
+                                    GitHub Repository
+                                </h3>
+                                <p className="text-xs text-foreground/70">
+                                    Contribute to BrackeT, report platform bugs, and inspect our roadmap.
+                                </p>
+                            </div>
+                            <span className="text-[11px] font-special text-accent mt-4">
+                                View Source ↗
+                            </span>
+                        </a>
+                    </div>
+                </section>
+
+                {/* 6. Contact & Inquiry Section */}
+                <ContactSection />
 
             </div>
         </main>
