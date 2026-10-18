@@ -66,7 +66,7 @@ const About = () => {
                 <div className="absolute left-[25%] bottom-[10%] h-[350px] w-[450px] rounded-full bg-primary/10 blur-[130px]" />
             </div>
 
-            <div className="w-[92%] max-w-7xl mx-auto py-12 sm:py-16 md:py-24 flex flex-col gap-16 sm:gap-20 md:gap-28">
+            <div className="max-w-11/12 xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20 flex flex-col gap-14 sm:gap-20 md:gap-24">
 
                 {/* ----------------- Top Motivation / Category Tag ------------------- */}
                 <div className="mx-auto w-fit rounded-full border-b border-accent px-4 py-1.5 sm:px-6 md:px-10">
@@ -95,9 +95,9 @@ const About = () => {
                     className="flex flex-col gap-10 sm:gap-14"
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-                        <motion.div variants={itemVariants} className="lg:col-span-7 flex flex-col space-y-6">
+                        <motion.div variants={itemVariants} className="lg:col-span-7 flex flex-col space-y-5 sm:space-y-6">
                             <div className="flex items-center gap-3">
-                                <div className="p-2.5 rounded-lg bg-accent/10 text-accent border border-accent/20">
+                                <div className="p-2.5 rounded-lg bg-accent/10 text-accent border border-accent/20 shrink-0">
                                     <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <h2 id="who-we-are-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
@@ -119,14 +119,14 @@ const About = () => {
                                 to hone your reflexes, BrackeT provides an authentic, high-fidelity proving ground.
                             </p>
 
-                            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
-                                <Link to="/problems">
-                                    <Button className="rounded-full px-6 h-11 bg-accent text-background font-bold hover:bg-accent/90 cursor-pointer shadow-[0_0_20px_rgba(223,251,21,0.25)] transition-all active:scale-95">
+                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                                <Link to="/problems" className="w-full sm:w-auto">
+                                    <Button className="w-full sm:w-auto rounded-full px-6 h-11 bg-accent text-background font-bold hover:bg-accent/90 cursor-pointer shadow-[0_0_20px_rgba(223,251,21,0.25)] transition-all active:scale-95">
                                         Explore Problem Catalog <ArrowRight className="w-4 h-4 ml-1.5" />
                                     </Button>
                                 </Link>
-                                <Link to="/">
-                                    <Button variant="outline" className="rounded-full px-6 h-11 border-white/10 bg-white/[0.03] hover:bg-white/[0.08] text-white cursor-pointer transition-all active:scale-95">
+                                <Link to="/" className="w-full sm:w-auto">
+                                    <Button variant="outline" className="w-full sm:w-auto rounded-full px-6 h-11 border-white/10 bg-white/[0.03] hover:bg-white/[0.08] text-white cursor-pointer transition-all active:scale-95">
                                         View Live Arena Demo
                                     </Button>
                                 </Link>
@@ -135,7 +135,7 @@ const About = () => {
 
                         {/* Visual Card / Brand Identity */}
                         <motion.div variants={itemVariants} className="lg:col-span-5">
-                            <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 sm:p-8 shadow-2xl backdrop-blur-md flex flex-col space-y-6 group hover:border-accent/40 transition-colors">
+                            <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-7 md:p-8 shadow-2xl backdrop-blur-md flex flex-col space-y-5 sm:space-y-6 group hover:border-accent/40 transition-colors">
                                 <div className="flex items-center gap-4">
                                     <img src={MainLogo} alt="BrackeT Logo" className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow" />
                                     <div>
@@ -169,36 +169,36 @@ const About = () => {
                     </div>
 
                     {/* 3 Core Pillars Grid: Mission, Vision, Verified Credentials */}
-                    <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                         {/* Mission */}
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-colors group">
-                            <div className="p-2.5 rounded-lg bg-accent/10 text-accent border border-accent/20 w-fit">
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-colors group">
+                            <div className="p-2.5 rounded-lg bg-accent/10 text-accent border border-accent/20 w-fit shrink-0">
                                 <Target className="w-5 h-5" />
                             </div>
-                            <h3 className="font-bold text-white text-lg">The Mission</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                            <h3 className="font-bold text-white text-base sm:text-lg">The Mission</h3>
+                            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                                 Empower developers to build unshakable problem-solving reflexes and eliminate interview anxiety through real-time challenge.
                             </p>
                         </div>
 
                         {/* Vision */}
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-colors group">
-                            <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25 w-fit">
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-colors group">
+                            <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25 w-fit shrink-0">
                                 <Sparkles className="w-5 h-5" />
                             </div>
-                            <h3 className="font-bold text-white text-lg">The Vision</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                            <h3 className="font-bold text-white text-base sm:text-lg">The Vision</h3>
+                            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                                 A global digital colosseum where algorithms meet sportsmanship, rated fairly by Elo logic and transparent execution.
                             </p>
                         </div>
 
                         {/* Verified Platform */}
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-colors group">
-                            <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25 w-fit">
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-colors group">
+                            <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25 w-fit shrink-0">
                                 <ShieldCheck className="w-5 h-5" />
                             </div>
-                            <h3 className="font-bold text-white text-lg">Verified Credentials</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                            <h3 className="font-bold text-white text-base sm:text-lg">Verified Credentials</h3>
+                            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                                 Trade License: 124154 • Open Source Monorepo architecture maintained for transparency and public reliability.
                             </p>
                         </div>

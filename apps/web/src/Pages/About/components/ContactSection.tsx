@@ -148,9 +148,9 @@ export const ContactSection: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={containerVariants}
-            className="flex flex-col space-y-12"
+            className="flex flex-col space-y-10 sm:space-y-14"
         >
-            <motion.div variants={itemVariants} className="text-center max-w-2xl mx-auto space-y-4">
+            <motion.div variants={itemVariants} className="text-center max-w-2xl mx-auto space-y-3 sm:space-y-4 px-2">
                 <div className="mx-auto w-fit rounded-full border-b border-accent px-4 py-1.5 sm:px-6 md:px-10">
                     <div className="flex items-center gap-2 sm:gap-4 whitespace-nowrap text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white">
                         <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
@@ -169,20 +169,20 @@ export const ContactSection: React.FC = () => {
                 <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white pt-2">
                     Contact Us & <span className="text-accent drop-shadow-[0_0_15px_rgba(223,251,21,0.3)]">Connect With the Arena</span>
                 </h2>
-                <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed max-w-xl mx-auto">
                     Have feedback, discovered an edge-case during a duel, or want to discuss partnership opportunities?
                     Our team is here to assist you.
                 </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 {/* Left Side: Contact Information & Channels (5 cols) */}
-                <motion.div variants={containerVariants} className="lg:col-span-5 flex flex-col space-y-6">
+                <motion.div variants={containerVariants} className="lg:col-span-5 flex flex-col space-y-5 sm:space-y-6">
 
                     {/* Email Contact Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
@@ -229,7 +229,7 @@ export const ContactSection: React.FC = () => {
                     {/* Phone / Helplines Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25">
@@ -275,7 +275,7 @@ export const ContactSection: React.FC = () => {
                     {/* Registry & Verification Details */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25">
@@ -302,7 +302,7 @@ export const ContactSection: React.FC = () => {
                     {/* Social Media & Channels */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <h3 className="font-bold text-white text-xs uppercase tracking-wider">
                             Connect on Social Channels
@@ -322,7 +322,7 @@ export const ContactSection: React.FC = () => {
                                     >
                                         <Icon className="w-5 h-5 text-gray-400 group-hover:text-accent group-hover:scale-110 transition-all shrink-0" />
                                         <div className="min-w-0">
-                                            <span className="text-xs font-semibold text-gray-200 group-hover:text-accent block truncate">
+                                             <span className="text-xs font-semibold text-gray-200 group-hover:text-accent block truncate">
                                                 {s.name}
                                             </span>
                                             <span className="text-[10px] text-gray-500 block truncate">
@@ -340,7 +340,7 @@ export const ContactSection: React.FC = () => {
 
                 {/* Right Side: Interactive "Get in Touch" Inquiry Form (7 cols) */}
                 <motion.div variants={itemVariants} className="lg:col-span-7">
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 sm:p-8 shadow-2xl backdrop-blur-md relative hover:border-accent/40 transition-colors">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-7 md:p-8 shadow-2xl backdrop-blur-md relative hover:border-accent/40 transition-colors">
                         {isSubmitted ? (
                             <div
                                 role="status"
