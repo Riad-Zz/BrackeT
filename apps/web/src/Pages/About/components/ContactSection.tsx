@@ -8,7 +8,6 @@ import {
     Check,
     Send,
     CheckCircle2,
-    MessageSquare,
     ExternalLink,
     Shield,
     Sparkles,
@@ -22,6 +21,7 @@ import {
 } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { HyperText } from "@/components/ui/hyper-text";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -150,12 +150,23 @@ export const ContactSection: React.FC = () => {
             variants={containerVariants}
             className="flex flex-col space-y-12"
         >
-            <motion.div variants={itemVariants} className="text-center max-w-2xl mx-auto space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1 text-xs text-accent tracking-wider uppercase backdrop-blur-md shadow-[0_0_15px_rgba(223,251,21,0.1)]">
-                    <MessageSquare className="w-3.5 h-3.5 text-accent" />
-                    <span>Get in Touch & Support</span>
+            <motion.div variants={itemVariants} className="text-center max-w-2xl mx-auto space-y-4">
+                <div className="mx-auto w-fit rounded-full border-b border-accent px-4 py-1.5 sm:px-6 md:px-10">
+                    <div className="flex items-center gap-2 sm:gap-4 whitespace-nowrap text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white">
+                        <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
+                            CONNECT
+                        </HyperText>
+                        <span className="text-[6px] sm:text-[8px] md:text-[10px] opacity-80">●</span>
+                        <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
+                            SUPPORT
+                        </HyperText>
+                        <span className="text-[6px] sm:text-[8px] md:text-[10px] opacity-80">●</span>
+                        <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
+                            COMMUNITY
+                        </HyperText>
+                    </div>
                 </div>
-                <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+                <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white pt-2">
                     Contact Us & <span className="text-accent drop-shadow-[0_0_15px_rgba(223,251,21,0.3)]">Connect With the Arena</span>
                 </h2>
                 <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
