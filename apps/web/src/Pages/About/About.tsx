@@ -33,8 +33,8 @@ const itemVariants: Variants = {
 
 const About = () => {
     return (
-        <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background text-foreground">
-            {/* Background Magic UI Grid Pattern and Subtle Glow */}
+        <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-[#0E1011] text-foreground">
+            {/* Background Magic UI Grid Pattern */}
             <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden pointer-events-none select-none">
                 <GridPattern
                     width={40}
@@ -53,11 +53,16 @@ const About = () => {
                         [15, 8],
                     ]}
                     className={cn(
-                        "h-full w-full [mask-image:radial-gradient(900px_circle_at_50%_35%,white,transparent)] opacity-90 stroke-white/10 fill-white/5"
+                        "h-full w-full [mask-image:radial-gradient(950px_circle_at_50%_35%,white,transparent)] stroke-white/[0.07] fill-white/[0.02]"
                     )}
                 />
-                {/* Subtle ambient accent glow behind hero section, echoing HomePage Hero glow */}
-                <div className="absolute top-[6%] h-[320px] w-[320px] sm:h-[420px] sm:w-[540px] rounded-full bg-accent/10 blur-[140px] -z-10 opacity-70" />
+            </div>
+
+            {/* Ambient Dual-Tone Background Glows matching HomePage & Problems */}
+            <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center overflow-hidden select-none">
+                <div className="absolute -left-[10%] top-[8%] h-[400px] w-[500px] rounded-full bg-primary/15 blur-[130px]" />
+                <div className="absolute -right-[10%] top-[30%] h-[400px] w-[500px] rounded-full bg-accent/10 blur-[140px]" />
+                <div className="absolute left-[25%] bottom-[10%] h-[350px] w-[450px] rounded-full bg-primary/10 blur-[130px]" />
             </div>
 
             <div className="w-[92%] max-w-7xl mx-auto py-12 sm:py-16 md:py-24 flex flex-col gap-20 sm:gap-24 md:gap-32">
