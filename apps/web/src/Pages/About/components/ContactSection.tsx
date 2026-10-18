@@ -152,7 +152,7 @@ export const ContactSection: React.FC = () => {
         >
             <motion.div variants={itemVariants} className="text-center max-w-2xl mx-auto space-y-3 sm:space-y-4 px-2">
                 <div className="mx-auto w-fit rounded-full border-b border-accent px-4 py-1.5 sm:px-6 md:px-10">
-                    <div className="flex items-center gap-2 sm:gap-4 whitespace-nowrap text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white">
+                    <div className="flex items-center gap-2 sm:gap-4 whitespace-nowrap font-special text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white">
                         <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
                             CONNECT
                         </HyperText>
@@ -182,7 +182,7 @@ export const ContactSection: React.FC = () => {
                     {/* Email Contact Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
@@ -229,7 +229,7 @@ export const ContactSection: React.FC = () => {
                     {/* Phone / Helplines Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25">
@@ -275,7 +275,7 @@ export const ContactSection: React.FC = () => {
                     {/* Registry & Verification Details */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25">
@@ -302,7 +302,7 @@ export const ContactSection: React.FC = () => {
                     {/* Social Media & Channels */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <h3 className="font-bold text-white text-xs uppercase tracking-wider">
                             Connect on Social Channels
@@ -394,7 +394,7 @@ export const ContactSection: React.FC = () => {
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             aria-invalid={errors.name ? "true" : "false"}
                                             aria-describedby={errors.name ? "contact-name-error" : undefined}
-                                            className="bg-foreground/3 border-foreground/10 text-foreground placeholder:text-foreground/40 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent"
+                                            className="bg-foreground/3 border-foreground/10 text-foreground placeholder:text-foreground/40 rounded-lg focus-visible:ring-1 focus-visible:ring-accent/60 focus-visible:border-accent/60 transition-all duration-200"
                                         />
                                         {errors.name && (
                                             <p id="contact-name-error" className="text-xs text-destructive">
@@ -415,7 +415,7 @@ export const ContactSection: React.FC = () => {
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             aria-invalid={errors.email ? "true" : "false"}
                                             aria-describedby={errors.email ? "contact-email-error" : undefined}
-                                            className="bg-foreground/3 border-foreground/10 text-foreground placeholder:text-foreground/40 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent"
+                                            className="bg-foreground/3 border-foreground/10 text-foreground placeholder:text-foreground/40 rounded-lg focus-visible:ring-1 focus-visible:ring-accent/60 focus-visible:border-accent/60 transition-all duration-200"
                                         />
                                         {errors.email && (
                                             <p id="contact-email-error" className="text-xs text-destructive">
@@ -434,7 +434,7 @@ export const ContactSection: React.FC = () => {
                                         id="contact-category"
                                         value={formData.category}
                                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                                        className="w-full rounded-md border border-foreground/10 bg-[#0E1011] px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent cursor-pointer"
+                                        className="w-full rounded-lg border border-foreground/10 bg-[#0E1011] px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent/60 focus:border-accent/60 cursor-pointer transition-all duration-200"
                                     >
                                         <option value="General Inquiry">General Inquiry & Feedback</option>
                                         <option value="Bug Report">Arena / Duel Bug Report</option>
@@ -457,7 +457,7 @@ export const ContactSection: React.FC = () => {
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         aria-invalid={errors.message ? "true" : "false"}
                                         aria-describedby={errors.message ? "contact-message-error" : undefined}
-                                        className="w-full rounded-md border border-foreground/10 bg-foreground/3 p-3 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent resize-none placeholder:text-foreground/40 text-xs sm:text-sm"
+                                        className="w-full rounded-lg border border-foreground/10 bg-foreground/3 p-3 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent/60 focus:border-accent/60 resize-none placeholder:text-foreground/40 transition-all duration-200 text-xs sm:text-sm"
                                     />
                                     {errors.message && (
                                         <p id="contact-message-error" className="text-xs text-destructive">
@@ -471,7 +471,7 @@ export const ContactSection: React.FC = () => {
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full rounded-md bg-accent text-background font-bold hover:bg-accent/90 h-11 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-[0_0_20px_rgba(223,251,21,0.25)]"
+                                        className="w-full rounded-full bg-accent text-background font-bold hover:bg-accent/90 h-11 sm:h-12 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-[0_0_20px_rgba(223,251,21,0.25)] hover:shadow-[0_0_25px_rgba(223,251,21,0.4)]"
                                     >
                                         {isSubmitting ? (
                                             <>
