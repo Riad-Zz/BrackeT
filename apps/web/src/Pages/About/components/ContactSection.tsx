@@ -151,14 +151,14 @@ export const ContactSection: React.FC = () => {
             className="flex flex-col space-y-12"
         >
             <motion.div variants={itemVariants} className="text-center max-w-2xl mx-auto space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1 text-xs text-accent tracking-wider uppercase backdrop-blur-md shadow-[0_0_15px_rgba(223,251,21,0.08)]">
+                <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1 text-xs text-accent tracking-wider uppercase backdrop-blur-md shadow-[0_0_15px_rgba(223,251,21,0.1)]">
                     <MessageSquare className="w-3.5 h-3.5 text-accent" />
                     <span>Get in Touch & Support</span>
                 </div>
-                <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-                    Contact Us & Connect With the Arena
+                <h2 id="contact-section-title" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+                    Contact Us & <span className="text-accent drop-shadow-[0_0_15px_rgba(223,251,21,0.3)]">Connect With the Arena</span>
                 </h2>
-                <p className="text-xs sm:text-sm md:text-base text-foreground/70">
+                <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                     Have feedback, discovered an edge-case during a duel, or want to discuss partnership opportunities?
                     Our team is here to assist you.
                 </p>
@@ -171,16 +171,16 @@ export const ContactSection: React.FC = () => {
                     {/* Email Contact Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-xl border border-border/40 bg-card/70 p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="p-2.5 rounded-lg bg-primary/20 text-accent">
+                                <div className="p-2.5 rounded-lg bg-accent/10 text-accent border border-accent/20">
                                     <Mail className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-foreground text-base">Direct Email</h3>
-                                    <p className="text-xs text-foreground/60">Official inquiries & support</p>
+                                    <h3 className="font-bold text-white text-base">Direct Email</h3>
+                                    <p className="text-xs text-gray-400">Official inquiries & support</p>
                                 </div>
                             </div>
 
@@ -210,7 +210,7 @@ export const ContactSection: React.FC = () => {
                         >
                             support@bracket.io
                         </a>
-                        <p className="text-xs text-foreground/70 leading-relaxed">
+                        <p className="text-xs text-gray-400 leading-relaxed">
                             We aim to respond to all technical queries and platform bug reports within 24 business hours.
                         </p>
                     </motion.div>
@@ -218,15 +218,15 @@ export const ContactSection: React.FC = () => {
                     {/* Phone / Helplines Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-xl border border-border/40 bg-card/70 p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <div className="flex items-center gap-3">
-                            <div className="p-2.5 rounded-lg bg-primary/20 text-accent">
+                            <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25">
                                 <Phone className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-foreground text-base">Helpline Numbers</h3>
-                                <p className="text-xs text-foreground/60 flex items-center gap-1 mt-0.5">
+                                <h3 className="font-bold text-white text-base">Helpline Numbers</h3>
+                                <p className="text-xs text-gray-400 flex items-center gap-1 mt-0.5">
                                     <Clock className="w-3 h-3 text-secondary" />
                                     Available: 10:00 AM – 5:00 PM (BST)
                                 </p>
@@ -235,10 +235,10 @@ export const ContactSection: React.FC = () => {
 
                         <div className="space-y-2 pt-1 text-sm">
                             {helplines.map((item, idx) => (
-                                <div key={item.tel} className="flex items-center justify-between py-1.5 border-b border-border/20 last:border-b-0">
+                                <div key={item.tel} className="flex items-center justify-between py-1.5 border-b border-white/5 last:border-b-0">
                                     <a
                                         href={`tel:${item.tel}`}
-                                        className="text-foreground/90 hover:text-accent transition-colors font-medium text-xs sm:text-sm"
+                                        className="text-gray-300 hover:text-accent transition-colors font-medium text-xs sm:text-sm"
                                     >
                                         {item.display}
                                     </a>
@@ -246,7 +246,7 @@ export const ContactSection: React.FC = () => {
                                         type="button"
                                         onClick={() => handleCopy(item.display, `phone-${idx}`)}
                                         aria-label={`Copy phone number ${item.display}`}
-                                        className="text-[11px] text-foreground/60 hover:text-accent cursor-pointer transition-colors p-1"
+                                        className="text-[11px] text-gray-400 hover:text-accent cursor-pointer transition-colors p-1"
                                     >
                                         {copiedItem === `phone-${idx}` ? (
                                             <span className="text-secondary flex items-center gap-1">
@@ -264,26 +264,26 @@ export const ContactSection: React.FC = () => {
                     {/* Registry & Verification Details */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-xl border border-border/40 bg-card/70 p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-colors shadow-lg"
                     >
                         <div className="flex items-center gap-3">
-                            <div className="p-2.5 rounded-lg bg-secondary/20 text-secondary">
+                            <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25">
                                 <Shield className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-foreground text-base">Platform Credentials</h3>
-                                <p className="text-xs text-foreground/60">Registered platform information</p>
+                                <h3 className="font-bold text-white text-base">Platform Credentials</h3>
+                                <p className="text-xs text-gray-400">Registered platform information</p>
                             </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-3 text-xs pt-2">
-                            <div className="rounded-lg bg-background/50 p-2.5 border border-border/30">
-                                <span className="text-foreground/60 block">Trade License</span>
+                            <div className="rounded-lg bg-white/[0.02] p-2.5 border border-white/5">
+                                <span className="text-gray-400 block">Trade License</span>
                                 <span className="font-semibold text-accent text-sm">124154</span>
                             </div>
-                            <div className="rounded-lg bg-background/50 p-2.5 border border-border/30">
-                                <span className="text-foreground/60 block">Platform Build</span>
-                                <span className="font-semibold text-foreground text-sm">Beta v0.0.1</span>
+                            <div className="rounded-lg bg-white/[0.02] p-2.5 border border-white/5">
+                                <span className="text-gray-400 block">Platform Build</span>
+                                <span className="font-semibold text-white text-sm">Beta v0.0.1</span>
                             </div>
                         </div>
                     </motion.div>
@@ -291,9 +291,9 @@ export const ContactSection: React.FC = () => {
                     {/* Social Media & Channels */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-xl border border-border/40 bg-card/70 p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-colors shadow-lg"
                     >
-                        <h3 className="font-bold text-foreground text-xs uppercase tracking-wider">
+                        <h3 className="font-bold text-white text-xs uppercase tracking-wider">
                             Connect on Social Channels
                         </h3>
 
@@ -307,18 +307,18 @@ export const ContactSection: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={`Open ${s.name} (opens in new tab)`}
-                                        className="flex items-center gap-3 p-2.5 rounded-lg bg-background/40 border border-border/30 hover:border-accent/50 hover:bg-background/80 transition-all group cursor-pointer"
+                                        className="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.02] border border-white/5 hover:border-accent/40 hover:bg-white/[0.05] transition-all group cursor-pointer"
                                     >
-                                        <Icon className="w-5 h-5 text-foreground/75 group-hover:text-accent group-hover:scale-110 transition-all shrink-0" />
+                                        <Icon className="w-5 h-5 text-gray-400 group-hover:text-accent group-hover:scale-110 transition-all shrink-0" />
                                         <div className="min-w-0">
-                                            <span className="text-xs font-semibold text-foreground group-hover:text-accent block truncate">
+                                            <span className="text-xs font-semibold text-gray-200 group-hover:text-accent block truncate">
                                                 {s.name}
                                             </span>
-                                            <span className="text-[10px] text-foreground/50 block truncate">
+                                            <span className="text-[10px] text-gray-500 block truncate">
                                                 {s.description}
                                             </span>
                                         </div>
-                                        <ExternalLink className="w-3 h-3 text-foreground/40 group-hover:text-accent ml-auto shrink-0" />
+                                        <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-accent ml-auto shrink-0" />
                                     </a>
                                 );
                             })}
@@ -329,27 +329,27 @@ export const ContactSection: React.FC = () => {
 
                 {/* Right Side: Interactive "Get in Touch" Inquiry Form (7 cols) */}
                 <motion.div variants={itemVariants} className="lg:col-span-7">
-                    <div className="rounded-2xl border border-border/50 bg-card/80 p-6 sm:p-8 shadow-2xl backdrop-blur-md relative hover:border-accent/40 transition-colors">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-6 sm:p-8 shadow-2xl backdrop-blur-md relative hover:border-accent/40 transition-colors">
                         {isSubmitted ? (
                             <div
                                 role="status"
                                 aria-live="polite"
                                 className="py-12 flex flex-col items-center text-center space-y-4 animate-in fade-in duration-300"
                             >
-                                <div className="p-4 rounded-full bg-secondary/20 text-secondary">
+                                <div className="p-4 rounded-full bg-secondary/15 text-secondary border border-secondary/25">
                                     <CheckCircle2 className="w-12 h-12" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-foreground">
+                                <h3 className="text-2xl font-bold text-white">
                                     Message Received!
                                 </h3>
-                                <p className="text-sm text-foreground/75 max-w-md leading-relaxed">
+                                <p className="text-sm text-gray-300 max-w-md leading-relaxed">
                                     Thank you, <span className="font-semibold text-accent">{formData.name}</span>.
                                     Your message regarding <span className="font-semibold text-accent">{formData.category}</span> has been dispatched to our engineering desk.
                                 </p>
                                 <div className="pt-4">
                                     <Button
                                         onClick={handleReset}
-                                        className="rounded-full bg-accent text-background font-bold hover:bg-accent/90 px-6 cursor-pointer shadow-md transition-all active:scale-95"
+                                        className="rounded-full bg-accent text-background font-bold hover:bg-accent/90 px-6 cursor-pointer shadow-[0_0_20px_rgba(223,251,21,0.25)] transition-all active:scale-95"
                                     >
                                         Send Another Message
                                     </Button>
@@ -357,12 +357,12 @@ export const ContactSection: React.FC = () => {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} noValidate className="space-y-6">
-                                <div className="flex items-center justify-between border-b border-border/30 pb-4">
+                                <div className="flex items-center justify-between border-b border-white/10 pb-4">
                                     <div>
-                                        <h3 className="text-xl font-bold text-foreground">
+                                        <h3 className="text-xl font-bold text-white">
                                             Send a Direct Inquiry
                                         </h3>
-                                        <p className="text-xs text-foreground/60 mt-0.5">
+                                        <p className="text-xs text-gray-400 mt-0.5">
                                             Fill out this form and our engineering team will follow up.
                                         </p>
                                     </div>
@@ -372,7 +372,7 @@ export const ContactSection: React.FC = () => {
                                 {/* Name & Email */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="space-y-2">
-                                        <label htmlFor="contact-name" className="text-xs font-semibold text-foreground/90 uppercase tracking-wider">
+                                        <label htmlFor="contact-name" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
                                             Your Name <span className="text-accent">*</span>
                                         </label>
                                         <Input
@@ -383,7 +383,7 @@ export const ContactSection: React.FC = () => {
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             aria-invalid={errors.name ? "true" : "false"}
                                             aria-describedby={errors.name ? "contact-name-error" : undefined}
-                                            className="bg-background/80 border-border/60 focus-visible:ring-accent"
+                                            className="bg-foreground/3 border-foreground/10 text-foreground placeholder:text-foreground/40 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent"
                                         />
                                         {errors.name && (
                                             <p id="contact-name-error" className="text-xs text-destructive">
@@ -393,7 +393,7 @@ export const ContactSection: React.FC = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label htmlFor="contact-email" className="text-xs font-semibold text-foreground/90 uppercase tracking-wider">
+                                        <label htmlFor="contact-email" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
                                             Email Address <span className="text-accent">*</span>
                                         </label>
                                         <Input
@@ -404,7 +404,7 @@ export const ContactSection: React.FC = () => {
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             aria-invalid={errors.email ? "true" : "false"}
                                             aria-describedby={errors.email ? "contact-email-error" : undefined}
-                                            className="bg-background/80 border-border/60 focus-visible:ring-accent"
+                                            className="bg-foreground/3 border-foreground/10 text-foreground placeholder:text-foreground/40 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent"
                                         />
                                         {errors.email && (
                                             <p id="contact-email-error" className="text-xs text-destructive">
@@ -416,14 +416,14 @@ export const ContactSection: React.FC = () => {
 
                                 {/* Category Selector */}
                                 <div className="space-y-2">
-                                    <label htmlFor="contact-category" className="text-xs font-semibold text-foreground/90 uppercase tracking-wider">
+                                    <label htmlFor="contact-category" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
                                         Inquiry Category
                                     </label>
                                     <select
                                         id="contact-category"
                                         value={formData.category}
                                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                                        className="w-full rounded-md border border-border/60 bg-background/80 px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer"
+                                        className="w-full rounded-md border border-foreground/10 bg-[#0E1011] px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent cursor-pointer"
                                     >
                                         <option value="General Inquiry">General Inquiry & Feedback</option>
                                         <option value="Bug Report">Arena / Duel Bug Report</option>
@@ -435,7 +435,7 @@ export const ContactSection: React.FC = () => {
 
                                 {/* Message Field */}
                                 <div className="space-y-2">
-                                    <label htmlFor="contact-message" className="text-xs font-semibold text-foreground/90 uppercase tracking-wider">
+                                    <label htmlFor="contact-message" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
                                         Message <span className="text-accent">*</span>
                                     </label>
                                     <textarea
@@ -446,7 +446,7 @@ export const ContactSection: React.FC = () => {
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         aria-invalid={errors.message ? "true" : "false"}
                                         aria-describedby={errors.message ? "contact-message-error" : undefined}
-                                        className="w-full rounded-md border border-border/60 bg-background/80 p-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent resize-none placeholder:text-foreground/40 text-xs sm:text-sm"
+                                        className="w-full rounded-md border border-foreground/10 bg-foreground/3 p-3 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent resize-none placeholder:text-foreground/40 text-xs sm:text-sm"
                                     />
                                     {errors.message && (
                                         <p id="contact-message-error" className="text-xs text-destructive">
@@ -460,7 +460,7 @@ export const ContactSection: React.FC = () => {
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full rounded-md bg-accent text-background font-bold hover:bg-accent/90 h-11 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99]"
+                                        className="w-full rounded-md bg-accent text-background font-bold hover:bg-accent/90 h-11 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-[0_0_20px_rgba(223,251,21,0.25)]"
                                     >
                                         {isSubmitting ? (
                                             <>
@@ -476,7 +476,7 @@ export const ContactSection: React.FC = () => {
                                     </Button>
                                 </div>
 
-                                <p className="text-[11px] text-foreground/50 text-center">
+                                <p className="text-[11px] text-gray-400 text-center">
                                     Your contact info is used exclusively for responding to this message.
                                     View our verified details on the left or reach out directly at <span className="text-accent">support@bracket.io</span>.
                                 </p>
