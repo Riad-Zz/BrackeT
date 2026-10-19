@@ -8,9 +8,6 @@ import {
 } from "lucide-react";
 import MainLogo from "@/assets/MainLogo.png";
 import { Button } from "@/components/ui/button";
-import { GridPattern } from "@/components/ui/grid-pattern";
-import { HyperText } from "@/components/ui/hyper-text";
-import { cn } from "@/lib/utils";
 import { ContactSection } from "./components/ContactSection";
 
 const containerVariants: Variants = {
@@ -35,55 +32,7 @@ const itemVariants: Variants = {
 const About = () => {
     return (
         <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-[#0E1011] text-foreground">
-            {/* Background Magic UI Grid Pattern */}
-            <div className="absolute inset-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden pointer-events-none select-none">
-                <GridPattern
-                    width={40}
-                    height={40}
-                    x={-1}
-                    y={-1}
-                    strokeDasharray="4 2"
-                    squares={[
-                        [4, 3],
-                        [2, 1],
-                        [7, 3],
-                        [10, 6],
-                        [6, 8],
-                        [12, 4],
-                        [8, 12],
-                        [15, 8],
-                    ]}
-                    className={cn(
-                        "h-full w-full [mask-image:radial-gradient(950px_circle_at_50%_35%,white,transparent)] stroke-white/[0.07] fill-white/[0.02]"
-                    )}
-                />
-            </div>
-
-            {/* Ambient Dual-Tone Background Glows matching HomePage & Problems */}
-            <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center overflow-hidden select-none">
-                <div className="absolute -left-[10%] top-[8%] h-[400px] w-[500px] rounded-full bg-primary/15 blur-[130px]" />
-                <div className="absolute -right-[10%] top-[30%] h-[400px] w-[500px] rounded-full bg-accent/10 blur-[140px]" />
-                <div className="absolute left-[25%] bottom-[10%] h-[350px] w-[450px] rounded-full bg-primary/10 blur-[130px]" />
-            </div>
-
             <div className="max-w-11/12 xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20 flex flex-col gap-14 sm:gap-20 md:gap-24">
-
-                {/* ----------------- Top Motivation / Category Tag ------------------- */}
-                <div className="mx-auto w-fit rounded-full border-b border-accent px-4 py-1.5 sm:px-6 md:px-10">
-                    <div className="flex items-center gap-2 sm:gap-4 whitespace-nowrap font-special text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white">
-                        <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView delay-300">
-                            ABOUT
-                        </HyperText>
-                        <span className="text-[6px] sm:text-[8px] md:text-[10px] opacity-80">●</span>
-                        <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
-                            MISSION
-                        </HyperText>
-                        <span className="text-[6px] sm:text-[8px] md:text-[10px] opacity-80">●</span>
-                        <HyperText as="span" className="text-[10px] sm:text-xs md:text-sm startOnView">
-                            ARENA
-                        </HyperText>
-                    </div>
-                </div>
 
                 {/* Who We Are & Story Section */}
                 <motion.section
