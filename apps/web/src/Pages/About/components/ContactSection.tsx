@@ -458,6 +458,48 @@ export const ContactSection: React.FC = () => {
                     </div>
                 </motion.div>
             </div>
+
+            {/* Social Media & Channels (Full Width) */}
+            <motion.div
+                variants={itemVariants}
+                className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
+            >
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <h3 className="font-bold text-white text-xs uppercase tracking-wider">
+                        Connect on Social Channels
+                    </h3>
+                    <p className="text-xs text-gray-400">
+                        Join our developer community and track real-time platform updates
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                    {socialLinks.map((s) => {
+                        const Icon = s.icon;
+                        return (
+                            <a
+                                key={s.name}
+                                href={s.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Open ${s.name} (opens in new tab)`}
+                                className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-accent/40 hover:bg-white/[0.05] transition-all group cursor-pointer"
+                            >
+                                <Icon className="w-5 h-5 text-gray-400 group-hover:text-accent group-hover:scale-110 transition-all shrink-0" />
+                                <div className="min-w-0 flex-1">
+                                    <span className="text-xs font-semibold text-gray-200 group-hover:text-accent block truncate">
+                                        {s.name}
+                                    </span>
+                                    <span className="text-[10px] text-gray-500 block truncate">
+                                        {s.description}
+                                    </span>
+                                </div>
+                                <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-accent shrink-0" />
+                            </a>
+                        );
+                    })}
+                </div>
+            </motion.div>
         </motion.section>
     );
 };
