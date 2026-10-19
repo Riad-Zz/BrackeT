@@ -70,7 +70,7 @@ const About = () => {
 
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
                                 <Link to="/problems" className="w-full sm:w-auto">
-                                    <Button className="w-full sm:w-auto rounded-full px-6 h-11 bg-accent text-background font-bold hover:bg-accent/90 cursor-pointer shadow-[0_0_20px_rgba(223,251,21,0.25)] hover:shadow-[0_0_25px_rgba(223,251,21,0.4)] transition-all duration-200 active:scale-95">
+                                    <Button className="w-full sm:w-auto rounded-full px-6 h-11 bg-foreground text-background font-bold hover:bg-accent/90 cursor-pointer shadow-[0_0_20px_rgba(223,251,21,0.25)] hover:shadow-[0_0_25px_rgba(223,251,21,0.4)] transition-all duration-200 active:scale-95">
                                         Explore Problem Catalog <ArrowRight className="w-4 h-4 ml-1.5" />
                                     </Button>
                                 </Link>
@@ -84,7 +84,7 @@ const About = () => {
 
                         {/* Visual Card / Brand Identity */}
                         <motion.div variants={itemVariants} className="lg:col-span-5">
-                            <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-7 md:p-8 shadow-xl backdrop-blur-md flex flex-col space-y-5 sm:space-y-6 group hover:border-accent/40 transition-all duration-300">
+                            <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-7 md:p-8 shadow-xl backdrop-blur-md flex flex-col space-y-5 sm:space-y-6 group hover:border-foreground/40 transition-all duration-300">
                                 <div className="flex items-center gap-4">
                                     <img src={MainLogo} alt="BrackeT Logo" className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow" />
                                     <div>
@@ -120,7 +120,7 @@ const About = () => {
                     {/* 3 Core Pillars Grid: Mission, Vision, Verified Credentials */}
                     <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                         {/* Mission */}
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-all duration-300 group">
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-all duration-300 group">
                             <div className="p-2.5 rounded-lg bg-accent/10 text-accent border border-accent/20 w-fit shrink-0">
                                 <Target className="w-5 h-5" />
                             </div>
@@ -131,7 +131,7 @@ const About = () => {
                         </div>
 
                         {/* Vision */}
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-all duration-300 group">
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-all duration-300 group">
                             <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25 w-fit shrink-0">
                                 <Sparkles className="w-5 h-5" />
                             </div>
@@ -142,7 +142,7 @@ const About = () => {
                         </div>
 
                         {/* Verified Platform */}
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-all duration-300 group">
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col space-y-3 hover:border-accent/40 transition-all duration-300 group">
                             <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25 w-fit shrink-0">
                                 <ShieldCheck className="w-5 h-5" />
                             </div>
@@ -153,8 +153,6 @@ const About = () => {
                         </div>
                     </motion.div>
                 </motion.section>
-
-                {/* Contact & Inquiry Section */}
                 <ContactSection />
 
             </div>

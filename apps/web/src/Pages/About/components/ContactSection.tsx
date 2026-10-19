@@ -182,7 +182,7 @@ export const ContactSection: React.FC = () => {
                     {/* Email Contact Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
@@ -199,7 +199,7 @@ export const ContactSection: React.FC = () => {
                                 type="button"
                                 onClick={() => handleCopy("support@bracket.io", "email")}
                                 aria-label="Copy support email address"
-                                className="text-xs flex items-center gap-1.5 text-accent hover:text-accent/90 cursor-pointer px-2.5 py-1.5 rounded-md bg-accent/10 border border-accent/20 transition-all hover:bg-accent/20 active:scale-95"
+                                className="text-xs flex items-center gap-1.5 text-accent hover:border-foreground/40 cursor-pointer px-2.5 py-1.5 rounded-md bg-accent/10 border border-accent/20 transition-all hover:bg-accent/20 active:scale-95"
                             >
                                 {copiedItem === "email" ? (
                                     <>
@@ -229,7 +229,7 @@ export const ContactSection: React.FC = () => {
                     {/* Phone / Helplines Card */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 backdrop-blur-md space-y-4 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 rounded-lg bg-primary/15 text-primary border border-primary/25">
@@ -275,7 +275,7 @@ export const ContactSection: React.FC = () => {
                     {/* Registry & Verification Details */}
                     <motion.div
                         variants={itemVariants}
-                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-all duration-300 shadow-lg"
+                        className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-6 backdrop-blur-md space-y-3 hover:border-accent/40 transition-all duration-300 shadow-lg"
                     >
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 rounded-lg bg-secondary/15 text-secondary border border-secondary/25">
@@ -340,7 +340,7 @@ export const ContactSection: React.FC = () => {
 
                 {/* Right Side: Interactive "Get in Touch" Inquiry Form (7 cols) */}
                 <motion.div variants={itemVariants} className="lg:col-span-7">
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] p-5 sm:p-7 md:p-8 shadow-2xl backdrop-blur-md relative hover:border-accent/40 transition-colors">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] hover:border-foreground/40 p-5 sm:p-7 md:p-8 shadow-2xl backdrop-blur-md relative hover:border-accent/40 transition-colors">
                         {isSubmitted ? (
                             <div
                                 role="status"
@@ -471,7 +471,7 @@ export const ContactSection: React.FC = () => {
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full rounded-full bg-accent text-background font-bold hover:bg-accent/90 h-11 sm:h-12 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-[0_0_20px_rgba(223,251,21,0.25)] hover:shadow-[0_0_25px_rgba(223,251,21,0.4)]"
+                                        className="w-full rounded-full bg-foreground text-background font-bold hover:bg-foreground/90 h-11 sm:h-12 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99]"
                                     >
                                         {isSubmitting ? (
                                             <>
